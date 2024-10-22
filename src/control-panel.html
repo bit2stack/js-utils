@@ -4,129 +4,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bit-snackbar.css" media="screen" charset="utf-8">
     <style>body > div{margin-bottom: 5px;} body button{height: 1.5rem}</style>
-
 </head>
 <body>
+    <h1>BitSnackbar Control Panel</h1>
     <div>
-        <button onclick="Snackbar.show()">show default</button>
+        <button onclick="BitSnackbar.show()">show default</button>
     </div>
     <div>
-        <button onclick="Snackbar.tiny({message:'Lorem ipsum, dolor sit amet', position:'top-center'})">tiny</button>
-        <button onclick="Snackbar.info({message:'Lorem ipsum, dolor sit amet', position:'top-center'})">info</button>
-        <button onclick="Snackbar.success({message:'Lorem ipsum, dolor sit amet', position:'top-center'})">success</button>
-        <button onclick="Snackbar.warning({message:'Lorem ipsum, dolor sit amet', position:'top-center'})">warning</button>
-        <button onclick="Snackbar.danger({message:'Lorem ipsum, dolor sit amet', position:'top-center'})">danger</button>
+        <button onclick="BitSnackbar.tiny({message:'I got a message!', position:'top-center'})">tiny</button>
+        <button onclick="BitSnackbar.info({message:'I got a message!', position:'top-center'})">info</button>
+        <button onclick="BitSnackbar.success({message:'I got a message!', position:'top-center'})">success</button>
+        <button onclick="BitSnackbar.warning({message:'I got a message!', position:'top-center'})">warning</button>
+        <button onclick="BitSnackbar.danger({message:'I got a message!', position:'top-center'})">danger</button>
     </div>
     <div> 
-        <button onclick="Snackbar.show({bgColor:'#1565C0'})">change backgroundColor</button>
-        <button onclick="Snackbar.show({opacity:.5})">opacity 0.5</button>
-        <button onclick="Snackbar.show({opacity:.7})">opacity 0.7</button>
+        <button onclick="BitSnackbar.show({bgColor:'#1565C0'})">change backgroundColor</button>
+        <button onclick="BitSnackbar.show({opacity:.5})">opacity 0.5</button>
+        <button onclick="BitSnackbar.show({opacity:.7})">opacity 0.7</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({position:'top-left'})">top-left</button>
-        <button onclick="Snackbar.show({position:'top-center'})">top-center</button>
-        <button onclick="Snackbar.show({position:'top-right'})">top-right</button>
-        <button onclick="Snackbar.show({position:'bottom-left'})">bottom-left : default</button>
-        <button onclick="Snackbar.show({position:'bottom-center'})">bottom-center</button>
-        <button onclick="Snackbar.show({position:'bottom-right'})">bottom-right</button>
+        <button onclick="BitSnackbar.show({position:'top-left'})">top-left</button>
+        <button onclick="BitSnackbar.show({position:'top-center'})">top-center</button>
+        <button onclick="BitSnackbar.show({position:'top-right'})">top-right</button>
+        <button onclick="BitSnackbar.show({position:'bottom-left'})">bottom-left : default</button>
+        <button onclick="BitSnackbar.show({position:'bottom-center'})">bottom-center</button>
+        <button onclick="BitSnackbar.show({position:'bottom-right'})">bottom-right</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({margin:'0'})">margin 0</button>
-        <button onclick="Snackbar.show({margin:'10px'})">margin 10 : default</button>
-        <button onclick="Snackbar.show({margin:'24px'})">margin 24</button>
-        <button onclick="Snackbar.show({margin:'1rem'})">margin 1rem</button>
-        <button onclick="Snackbar.show({margin:'2rem'})">margin 2rem</button>
-        <button onclick="Snackbar.show({margin:'0 0 10px 10px'})">margin bottom-10 left-10</button>
+        <button onclick="BitSnackbar.show({margin:'0'})">margin 0</button>
+        <button onclick="BitSnackbar.show({margin:'10px'})">margin 10 : default</button>
+        <button onclick="BitSnackbar.show({margin:'24px'})">margin 24</button>
+        <button onclick="BitSnackbar.show({margin:'1rem'})">margin 1rem</button>
+        <button onclick="BitSnackbar.show({margin:'2rem'})">margin 2rem</button>
+        <button onclick="BitSnackbar.show({margin:'0 0 10px 10px'})">margin bottom-10 left-10</button>
     </div>
     <div>
-        <button onclick="Snackbar.show()">width 100%</button>
-        <button onclick="Snackbar.show({width:'200px'})">width 200</button>
+        <button onclick="BitSnackbar.show()">width 100%</button>
+        <button onclick="BitSnackbar.show({width:'200px'})">width 200</button>
         under small device
     </div>
     <div>
-        <button onclick="Snackbar.show({duration:1000})">duration 1000</button>
-        <button onclick="Snackbar.show({duration:3000})">duration 3000</button>
-        <button onclick="Snackbar.show({duration:5000})">duration 5000 : default</button>
-        <button onclick="Snackbar.show({duration:7000})">duration 7000</button>
-        <button onclick="Snackbar.show({duration:10000})">duration 10000</button>
+        <button onclick="BitSnackbar.show({duration:1000})">duration 1000</button>
+        <button onclick="BitSnackbar.show({duration:2000})">duration 2000</button>
+        <button onclick="BitSnackbar.show({duration:3500})">duration 3500 : default</button>
+        <button onclick="BitSnackbar.show({duration:5000})">duration 5000</button>
+        <button onclick="BitSnackbar.show({duration:10000})">duration 10000</button>
     </div>
     <div>
-        <button onclick="Snackbar.show()">auto hide : default</button>
-        <button onclick="Snackbar.show({autoHide:false})">non auto hide</button>
-        <button onclick="Snackbar.close()">close snack bar</button>
+        <button onclick="BitSnackbar.show()">auto hide : default</button>
+        <button onclick="BitSnackbar.show({autoHide:false})">non auto hide</button>
+        <button onclick="BitSnackbar.close()">close snack bar</button>
     </div>
     <div>
-        <button onclick="Snackbar.show()">no message title</button>
-        <button onclick="Snackbar.show({title:'title'})">with message title</button>
+        <button onclick="BitSnackbar.show()">no message title</button>
+        <button onclick="BitSnackbar.show({title:'title'})">with message title</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({title:'title', titleAlign:'left'})">left title</button>
-        <button onclick="Snackbar.show({title:'title', titleAlign:'center'})">center title</button>
-        <button onclick="Snackbar.show({title:'title', titleAlign:'right'})">right title</button>
-        <button onclick="Snackbar.show({title:'title', messageAlign:'left'})">left message</button>
-        <button onclick="Snackbar.show({title:'title', messageAlign:'center'})">center message</button>
-        <button onclick="Snackbar.show({title:'title', messageAlign:'right'})">right message</button>
+        <button onclick="BitSnackbar.show({title:'title', titleAlign:'left'})">left title</button>
+        <button onclick="BitSnackbar.show({title:'title', titleAlign:'center'})">center title</button>
+        <button onclick="BitSnackbar.show({title:'title', titleAlign:'right'})">right title</button>
+        <button onclick="BitSnackbar.show({title:'title', messageAlign:'left'})">left message</button>
+        <button onclick="BitSnackbar.show({title:'title', messageAlign:'center'})">center message</button>
+        <button onclick="BitSnackbar.show({title:'title', messageAlign:'right'})">right message</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({title:'title', titleFontColor:'#90CAF9'})">change title color </button>
-        <button onclick="Snackbar.show({title:'title', titleFontSize:'17px'})">title font 17px : default</button>
-        <button onclick="Snackbar.show({title:'title', titleFontSize:'20px'})">title font 20px</button>
+        <button onclick="BitSnackbar.show({title:'title', titleFontColor:'#90CAF9'})">change title color </button>
+        <button onclick="BitSnackbar.show({title:'title', titleFontSize:'17px'})">title font 17px : default</button>
+        <button onclick="BitSnackbar.show({title:'title', titleFontSize:'20px'})">title font 20px</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({title:'title', messageFontColor:'#90CAF9'})">change message color </button>
-        <button onclick="Snackbar.show({title:'title', messageFontSize:'14px'})">message font 14px : default</button>
-        <button onclick="Snackbar.show({title:'title', messageFontSize:'16px'})">message font 16px</button>
+        <button onclick="BitSnackbar.show({title:'title', messageFontColor:'#90CAF9'})">change message color </button>
+        <button onclick="BitSnackbar.show({title:'title', messageFontSize:'14px'})">message font 14px : default</button>
+        <button onclick="BitSnackbar.show({title:'title', messageFontSize:'16px'})">message font 16px</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({showHeader:true})">no header color : default</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'info'})">header color info</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'success'})">header color success</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'warn'})">header color warning</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'danger'})">header color danger</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'#673ab7'})">custom header color </button>
+        <button onclick="BitSnackbar.show({showHeader:true})">no header color : default</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'info'})">header color info</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'success'})">header color success</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'warn'})">header color warning</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'danger'})">header color danger</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'#673ab7'})">custom header color </button>
     </div>
     <div>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'INFO', headerColor:'info'})">info label+color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'SUCCESS', headerColor:'success'})">success label+color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'WARN', headerColor:'warn'})">warn label+color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'DANGER', headerColor:'danger'})">danger label+color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'CUSTOM', headerColor:'#673ab7'})">custom label+color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO', headerColor:'info'})">info label+color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'SUCCESS', headerColor:'success'})">success label+color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'WARN', headerColor:'warn'})">warn label+color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'DANGER', headerColor:'danger'})">danger label+color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'CUSTOM', headerColor:'#673ab7'})">custom label+color</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'INFO', headerLabelColor:'info'})">info label color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'SUCCESS', headerLabelColor:'success'})">success label color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'WARN', headerLabelColor:'warn'})">warn label color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'DANGER', headerLabelColor:'danger'})">danger label color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'CUSTOM', headerLabelColor:'#673ab7'})">custom label color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO', headerLabelColor:'info'})">info label color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'SUCCESS', headerLabelColor:'success'})">success label color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'WARN', headerLabelColor:'warn'})">warn label color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'DANGER', headerLabelColor:'danger'})">danger label color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'CUSTOM', headerLabelColor:'#673ab7'})">custom label color</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'INFO', headerLabelBgColor:'info'})">info label bg color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'SUCCESS', headerLabelBgColor:'success'})">success label bg color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'WARN', headerLabelBgColor:'warn'})">warn label bg color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'DANGER', headerLabelBgColor:'danger'})">danger label bg color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerLabel:'CUSTOM', headerLabelBgColor:'#673ab7'})">custom label bg color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO', headerLabelBgColor:'info'})">info label bg color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'SUCCESS', headerLabelBgColor:'success'})">success label bg color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'WARN', headerLabelBgColor:'warn'})">warn label bg color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'DANGER', headerLabelBgColor:'danger'})">danger label bg color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerLabel:'CUSTOM', headerLabelBgColor:'#673ab7'})">custom label bg color</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'info', headerIcon:'info'})">info icon</button>
-        <button onclick="Snackbar.show({showHeader:true, headerIcon:'info_colored'})">colored info icon</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'success', headerIcon:'success'})">success icon</button>
-        <button onclick="Snackbar.show({showHeader:true, headerIcon:'success_colored'})">colored success icon</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'warn', headerIcon:'warn'})">warn icon</button>
-        <button onclick="Snackbar.show({showHeader:true, headerIcon:'warn_colored'})">colored warn icon</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'danger', headerIcon:'danger'})">danger icon</button>
-        <button onclick="Snackbar.show({showHeader:true, headerIcon:'danger_colored'})">colored danger icon</button>
-        <button onclick="Snackbar.show({showHeader:true, headerIcon:'question'})">question icon</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'info', headerIcon:'info'})">info icon</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerIcon:'info_colored'})">colored info icon</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'success', headerIcon:'success'})">success icon</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerIcon:'success_colored'})">colored success icon</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'warn', headerIcon:'warn'})">warn icon</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerIcon:'warn_colored'})">colored warn icon</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'danger', headerIcon:'danger'})">danger icon</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerIcon:'danger_colored'})">colored danger icon</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerIcon:'question'})">question icon</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'info', headerIcon:'info'})">action button : default</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:{label:'DISMISS', function:()=>Snackbar.close()}})">action text</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:[{label:'ACTION', function:()=>alert('ACTION TEST')}, {icon: 'close', function:()=>Snackbar.close()}]})">text+button</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:[{icon: 'arrow_down', function:()=>alert('ACTION TEST')}, {icon: 'close', function:()=>Snackbar.close()}]})">button+button</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:{label:'DISMISS', color:'white', function:()=>Snackbar.close()}})">change action text color</button>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:{label:'DISMISS', fontSize:'17px', function:()=>Snackbar.close()}})">change action text color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'info', headerIcon:'info'})">action button : default</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:{label:'DISMISS', function:()=>BitSnackbar.close()}})">action text</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:[{label:'ACTION', function:()=>alert('ACTION TEST')}, {icon: 'close', function:()=>BitSnackbar.close()}]})">text+button</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:[{icon: 'arrow_down', function:()=>alert('ACTION TEST')}, {icon: 'close', function:()=>BitSnackbar.close()}]})">button+button</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:{label:'DISMISS', color:'white', function:()=>BitSnackbar.close()}})">change action text color</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', actions:{label:'DISMISS', fontSize:'17px', function:()=>BitSnackbar.close()}})">change action text color</button>
     </div>
     <div>
-        <button onclick="Snackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', onClose:()=>{alert('AFTER CLOSE ACTION');}})">onClose function</button>
+        <button onclick="BitSnackbar.show({showHeader:true, headerColor:'info', headerIcon:'info', onClose:()=>{alert('AFTER CLOSE ACTION');}})">onClose function</button>
     </div>
     <script src="bit-snackbar.js" charset="utf-8"></script> 
 </body>

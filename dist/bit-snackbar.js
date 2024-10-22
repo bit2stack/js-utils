@@ -3,17 +3,17 @@
 
     if (typeof define === 'function' && define.amd) {
         define([], function() {
-            return (root.Snackbar = factory());
+            return (root.BitSnackbar = factory());
         });
     } else if (typeof module === 'object' && module.exports) {
-        module.exports = root.Snackbar = factory();
+        module.exports = root.BitSnackbar = factory();
     } else {
-        root.Snackbar = factory();
+        root.BitSnackbar = factory();
     }
 })(this, function() {
-    var Snackbar = {};
+    var BitSnackbar = {};
 
-    Snackbar.current = null;
+    BitSnackbar.current = null;
     var $defaults = 
     {
         bgColor:            '#323232',
@@ -21,7 +21,7 @@
         opacity:            1,
         margin:             '10px',
         width:              'auto',
-        duration:           50000,
+        duration:           3500,
         showHeader:         false,
         showAction:         true,
         autoHide:           true,
@@ -35,7 +35,7 @@
         titleFontColor:     '#FFFFFF',
         titleFontSize:      '17px',
         titleAlign:         'left',
-        message:            'Default Text',
+        message:            'No Message',
         messageFontColor:   '#FFFFFF',
         messageFontSize:    '14px',
         messageAlign:       'left',
@@ -43,63 +43,63 @@
         onClose:            null
     };
 
-    Snackbar.show = function($options) 
+    BitSnackbar.show = function($options) 
     {
         var options = Extend(true, $defaults, $options);
         fire(options);
     };
 
-    Snackbar.tiny = function($options)
+    BitSnackbar.tiny = function($options)
     {
         $options.showAction = false;
         $options.messageAlign = 'center';
-        Snackbar.show($options);
+        BitSnackbar.show($options);
     };
 
-    Snackbar.info = function($options)
+    BitSnackbar.info = function($options)
     {
         $options.showHeader = true;
         $options.headerColor = 'info';
         $options.headerIcon = 'info';
-        Snackbar.show($options);
+        BitSnackbar.show($options);
     };
 
-    Snackbar.success = function($options)
+    BitSnackbar.success = function($options)
     {
         $options.showHeader = true;
         $options.headerColor = 'success';
         $options.headerIcon = 'success';
-        Snackbar.show($options);
+        BitSnackbar.show($options);
     };
 
-    Snackbar.warning = function($options)
+    BitSnackbar.warning = function($options)
     {
         $options.showHeader = true;
         $options.headerColor = 'warn';
         $options.headerIcon = 'warn';
-        Snackbar.show($options);
+        BitSnackbar.show($options);
     };
 
-    Snackbar.danger = function($options)
+    BitSnackbar.danger = function($options)
     {
         $options.showHeader = true;
         $options.headerColor = 'danger';
         $options.headerIcon = 'danger';
-        Snackbar.show($options);
+        BitSnackbar.show($options);
     };
 
     function fire(o)
     {
-        if (Snackbar.current) 
+        if (BitSnackbar.current) 
         {
-            Snackbar.current.style.opacity = 0;
+            BitSnackbar.current.style.opacity = 0;
             setTimeout(
                 function() 
-                {   // possible null if too many/fast Snackbars
+                {   // possible null if too many/fast BitSnackbars
                     var $parent = this.parentElement;
                     if ($parent) $parent.removeChild(this);
                     if (typeof(o.onClose) == 'function') o.onClose();
-                }.bind(Snackbar.current),500);
+                }.bind(BitSnackbar.current),500);
         }
 
         var nest      = document.body;
@@ -128,7 +128,7 @@
         var $height = getComputedStyle(container).height;
         container.style.height = $height;
 
-        Snackbar.current = container;
+        BitSnackbar.current = container;
     };
     
     function getContainer(o) 
@@ -145,11 +145,12 @@
             setTimeout(
                 function() 
                 {
-                    if (Snackbar.current === this) 
+                    console.log("aaa");
+                    if (BitSnackbar.current === this) 
                     {   // When natural remove event occurs let's move the snackbar to its origins
-                        Snackbar.current.style.opacity = 0;
-                        Snackbar.current.style.top     = '-100px';
-                        Snackbar.current.style.bottom  = '-100px';
+                        BitSnackbar.current.style.opacity = 0;
+                        BitSnackbar.current.style.top     = '-100px';
+                        BitSnackbar.current.style.bottom  = '-100px';
                     }
                 }.bind(container),o.duration);
 
@@ -160,7 +161,7 @@
                     if (event.propertyName === 'opacity' && this.style.opacity === '0') 
                     {
                         if (typeof(o.onClose) === 'function') o.onClose(this);
-                        if (Snackbar.current === this)        Snackbar.current = null;
+                        if (BitSnackbar.current === this)        BitSnackbar.current = null;
                         this.parentElement.removeChild(this);
                     }
                 }.bind(container));
@@ -300,7 +301,7 @@
             arrow_down: 'iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAnlJREFUeF7tmu1t20AQBe86cSlWJ0klgStxKVYnSScyLiABgYDCD4k7u8jojyCbwNub0aPIk3rzgRLoaLrhTQHwm0ABCoAJwPE2QAEwATjeBigAJgDH2wAFwATgeBugAJgAHG8DFAATgONtgAJgAnC8DVAATACOtwEKgAnA8TZAATABON4GKAAmAMfbAAXABOB4G6AAmAAcbwMUABOA423A/ybgdru9tdZ+tdY+eu9/4PX/jZ9m+mqtXaJnCm3AtNDP1tp7a23AD1/wUvg00+/p7+EzhQlYwJ85hC/4XsACPjJTiIAH8JEFz6EP4IfPdLqAFfjhC74758+nnUcfQyHtjBAwzvk/NnzYhix45Z2/HPPae79smP3wIRECxlXPuMIYz2uPUyXshD9m+dl7v64N/cz/TxewuMzDJGSEP9iECKAlZIUfKoCSkBl+uIBoCdnhIwKiJFSAjwk4W0IV+KiAsyRUgo8LeLWEavBTCHiVhIrw0wh4VkJV+KkEHJUwbQOsbazNuwUh2wt7tibC7oS3DnX37dTWbYstx434dPDTNWCWtFPCFrcp4acVcOB09C8JaeGnFvAiCanhpxfwpIT08EsIOCihBPwyAnZKKAO/lICNEkrBLydgRUI5+CUFPJBQEn5ZAQsJ4+Xpv17Ycrd35Jh0WxF7FjHdMb+d/dORPTPtPba0gL2LzXi8AmArClAATACOtwEKgAnA8TZAATABON4GKAAmAMfbAAXABOB4G6AAmAAcbwMUABOA422AAmACcLwNUABMAI63AQqACcDxNkABMAE43gYoACYAx9sABcAE4HgboACYABxvAxQAE4DjbYACYAJw/DcxchdwZ+I0xgAAAABJRU5ErkJggg=='
         };
 
-        o.actions = o.actions == null?{icon: 'close', function:()=>Snackbar.close()}:o.actions; 
+        o.actions = o.actions == null?{icon: 'close', function:()=>BitSnackbar.close()}:o.actions; 
         o.actions = Array.isArray(o.actions)?o.actions:[o.actions];
 
         o.actions.forEach(el => 
@@ -329,9 +330,9 @@
         return wrapper;
     };
         
-    Snackbar.close = function() {
-        if (Snackbar.current) {
-            Snackbar.current.style.opacity = 0;
+    BitSnackbar.close = function() {
+        if (BitSnackbar.current) {
+            BitSnackbar.current.style.opacity = 0;
         }
     };
 
@@ -368,5 +369,5 @@
         return extended;
     };
 
-    return Snackbar;
+    return BitSnackbar;
 });
