@@ -179,7 +179,7 @@
 
         if(colorSet.includes(o.headerColor))
         {
-            wrapper.classList.add('bg-'+o.headerColor); 
+            wrapper.classList.add('sb-bg-'+o.headerColor); 
             wrapper.style.borderRadius = '4px 0px 0px 4px';
         }
         else if(o.headerColor != null)
@@ -190,7 +190,7 @@
 
         if(colorSet.includes(o.headerLabelColor))
         {
-            wrapper.classList.add('text-'+o.headerLabelColor);
+            wrapper.classList.add('sb-text-'+o.headerLabelColor);
         }
         else if(o.headerLabelColor != null)
         {
@@ -206,7 +206,7 @@
             {
                 label.style.padding = '0px 7px';
                 label.style.borderRadius = '2px';
-                label.classList.add('text-bg-'+o.headerLabelBgColor);
+                label.classList.add('sb-text-bg-'+o.headerLabelBgColor);
             }
             else if(o.headerLabelBgColor != null)
             {
