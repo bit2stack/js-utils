@@ -17,16 +17,18 @@
     padding-right: 15px;
 }
 
-.responsive th:nth-child(2),
-.responsive th:nth-child(3),
-.responsive th:nth-child(5),
-.responsive td:nth-child(2),
-.responsive td:nth-child(3),
-.responsive td:nth-child(5)
+@media (max-width: 768px)
 {
-    @media (max-width: 768px)
+    .responsive th:nth-child(2),
+    .responsive th:nth-child(3),
+    .responsive th:nth-child(5),
+    .responsive td:nth-child(2),
+    .responsive td:nth-child(3),
+    .responsive td:nth-child(5)
     {
-    display: none;
+
+            display: none !important;
+
     }
 }
 

@@ -145,7 +145,6 @@
             setTimeout(
                 function() 
                 {
-                    console.log("aaa");
                     if (BitSnackbar.current === this) 
                     {   // When natural remove event occurs let's move the snackbar to its origins
                         BitSnackbar.current.style.opacity = 0;
