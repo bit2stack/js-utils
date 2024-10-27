@@ -23,11 +23,11 @@ For more information about the **BitSnackbar**, please refer to the demo site be
 The **BitSnackbar** is divided into three areas: header, message, and action, allowing users to configure the snackbar's functionality through options for each area. Before taking a closer look at the specific options for each area, you can easily and quickly implement notification functionality in typical situations using the predefined features of the **BitSnackbar**, as shown in the example below.
 
 ```js
-BitSnackbar.tiny({message:'I got a message!', position:'top-center'});
-BitSnackbar.info({message:'I got a message!', position:'top-center'});
-BitSnackbar.success({message:'I got a message!', position:'top-center'});
-BitSnackbar.warning({message:'I got a message!', position:'top-center'});
-BitSnackbar.danger({message:'I got a message!', position:'top-center'});
+BitSnackbar.tiny({message:'BitSnackbar message example', position:'top-center'});
+BitSnackbar.info({message:'BitSnackbar message example', position:'top-center'});
+BitSnackbar.success({message:'BitSnackbar message example', position:'top-center'});
+BitSnackbar.warning({message:'BitSnackbar message example', position:'top-center'});
+BitSnackbar.danger({message:'BitSnackbar message example', position:'top-center'});
 ```
 In this case, the message must be provided, and if the position is not specified, it will default to `top-center`. If no message is entered, the snackbar will display the default message, `No Message`.
 
@@ -49,12 +49,11 @@ Global options are settings that determine the basic behavior of the **BitSnackb
 |position|string|top-center| Combinations of `top` or `bottom` with `left`, `right`, or `center` values to set the snackbar's position<br> eg. `top-center`, `bottom-right`|
 |opacity|number|1|Snackbar opacity. Decimal values between 0 and 1|
 |margin|string|10px|Snackbar margin. px, Size elements like px, em, rem|
-|width|string|auto|Snackbar width|
-|duration|number|35000|Snackbar presentation time on the screen. 10000 = 1s|
+|width|string|auto|Snackbar width. On screens larger than 640px, the max width is set to 568px.|
+|duration|number|35000|Snackbar presentation time on the screen. 1000 = 1s|
+|autoHide|boolean|true|Whether to automatically dismiss the snackbar after the duration time |
 |showHeader|boolean|false|Visibility of the header area|
 |showAction|boolean|true|Visibility of the action area|
-|autoHide|boolean|true|Whether to automatically dismiss the snackbar after the duration time |
-|customClass|string or css class|null|Additional CSS styles to apply to the snackbar container|
 
 
 ### Header Options
@@ -62,11 +61,11 @@ The header area conveys the message through color and icons. By default, the sna
 
 |Opton name|Type |Default|Description|
 |----------|:---:|:-----:|-----------|
-|headerBgColor|string|null|Background color of the header area <br> Four predefined colors: info, success, warn, and danger<br>Additionally, colors such as hex and rgb can be applied.|
+|headerColor|string|null|Background color of the header area <br> Four predefined colors: info, success, warning, and danger<br>Additionally, colors such as hex and rgb can be applied.|
 |headerLabel|string|null|Text to be displayed in the header|
-|headerLabelColor|string|#FFFFFF|Header label color <br> Four predefined colors: info, success, warn, and danger<br>Additionally, colors such as hex and rgb can be applied.|
-|headerLabelBgColor|string|null|Background color of the header label <br> Four predefined colors: info, success, warn, and danger<br>Additionally, colors such as hex and rgb can be applied.|
-|headerIcon|string|null|Built-in icons displayed in the header area. <br> There are four icons: info, success, warn, and danger. By adding _colored (e.g., info_colored), you can insert icons in predefined colors. <br>The default icons without color are white.|
+|headerLabelColor|string|#FFFFFF|Header label color <br> Four predefined colors: info, success, warning, and danger<br>Additionally, colors such as hex and rgb can be applied.|
+|headerLabelBgColor|string|null|Background color of the header label <br> Four predefined colors: info, success, warning, and danger<br>Additionally, colors such as hex and rgb can be applied.|
+|headerIcon|string|null|Built-in icons displayed in the header area. <br> There are five icons:info, success, warning, danger and question. By adding _colored (e.g., info_colored), you can insert icons in predefined colors. <br>The default icons without color are white.|
 
 ### Message Options
 The message area displays the message in text form. Depending on the situation, a title can be included. To include a title, you need to input the `title` option. By default, the title is not included, and its initial value is `null`.
@@ -77,7 +76,7 @@ The message area displays the message in text form. Depending on the situation, 
 |titleFontColor|string|#FFFFFF|Colors such as hex and rgb can be applied.|
 |titleFontSize|string|17px| Size elements like px, em, rem|
 |titleAlign|string|left|Title horizontal alignment. There are three options: left, center, and right.|
-|message|string|Default Text|Main snackbar message.|
+|message|string|No Message|Main snackbar message.|
 |messageFontColor|string|#FFFFFF|Colors such as hex and rgb can be applied.|
 |messageFontSize|string|14px| Size elements like px, em, rem|
 |messageAlign|string|left|Message horizontal alignment. There are three options: left, center, and right.|
@@ -104,10 +103,10 @@ The items that will be configured to execute the action are as follows. When usi
 
 |Opton name|Type |Default|Description|
 |----------|:---:|:-----:|-----------|
-|label|string|null|Action label |
-|color|string|null|Action label font color. Colors such as hex and rgb can be applied.|
-|fontSize|string|null|Action label font size. Size elements like px, em, rem|
 |icon|string|close|Two built-in icons are available: `close` and `arrow_down`.|
+|label|string|null|Action label |
+|color|string|#4caf50|Action label font color. Colors such as hex and rgb can be applied.|
+|fontSize|string|inherit|Action label font size. Size elements like px, em, rem|
 |function|function|Snackbar.close()|The actual function to be executed when the label or icon is clicked.|
 
 
@@ -115,7 +114,7 @@ The items that will be configured to execute the action are as follows. When usi
 You can use the `onClose` event to define an event that will execute after the **BitSnackbar** has closed (disappeared from the screen).  
 Below is an example that shows a simple alert box after the snackbar closes.
 ```js
-Snackbar.show({message:'onClose option demo', onClose:()=>{alert('AFTER CLOSE ACTION');}})
+Snackbar.show({message:'onClose option demo', onClose:()=>alert('AFTER CLOSE ACTION')})
 ```
 
 ## Inspired by

@@ -36,18 +36,18 @@
   margin: 0;
 }
 
-.snack-header.bg-info     {background-color: #04AA6D;}
-.snack-header.bg-success  {background-color: #03a9f4;}
-.snack-header.bg-warn     {background-color: #ff9800;}
-.snack-header.bg-danger   {background-color: #F44336;}
-.snack-header.text-info   {color: #04AA6D;}
-.snack-header.text-success{color: #03a9f4;}
-.snack-header.text-warn   {color: #ff9800;}
-.snack-header.text-danger {color: #F44336;}
-.snack-header > .text-bg-info    {background-color: #04AA6D;}
-.snack-header > .text-bg-success {background-color: #03a9f4;}
-.snack-header > .text-bg-warn    {background-color: #ff9800;}
-.snack-header > .text-bg-danger  {background-color: #F44336;}
+.snack-header.bg-info     {background-color: #04AA6D !important;}
+.snack-header.bg-success  {background-color: #03a9f4 !important;}
+.snack-header.bg-warning  {background-color: #ff9800 !important;}
+.snack-header.bg-danger   {background-color: #F44336 !important;}
+.snack-header.text-info   {color: #04AA6D !important;}
+.snack-header.text-success{color: #03a9f4 !important;}
+.snack-header.text-warning{color: #ff9800 !important;}
+.snack-header.text-danger {color: #F44336 !important;}
+.snack-header > .text-bg-info    {background-color: #04AA6D !important;}
+.snack-header > .text-bg-success {background-color: #03a9f4 !important;}
+.snack-header > .text-bg-warning {background-color: #ff9800 !important;}
+.snack-header > .text-bg-danger  {background-color: #F44336 !important;}
 
 .bit-snackbar-container .snack-message
 {
