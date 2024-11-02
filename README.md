@@ -7,6 +7,10 @@ The **BitSnackbar** is a message component developed using pure JavaScript and C
     <img src='http://www.bit-stack.com/demo/img/feature.png' alt='bit-snackbar feature image' style='width: 350px;'>
 </p>
 
+1. Header Area : Convey messages to users through text, icons, and background colors.
+2. Message Area : Display messages in text form. It can include a title and a main message.
+3. Action Area : Help user interaction through buttons or text
+
 
 ## Document and Demo
 For more information about the **BitSnackbar**, please refer to the demo site below. You can quickly see the functionality of the snackbar through the control panel page without complex explanations.
