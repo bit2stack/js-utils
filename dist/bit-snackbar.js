@@ -33,7 +33,7 @@
         headerIcon:         null,
         title:              null,
         titleFontColor:     '#FFFFFF',
-        titleFontSize:      '17px',
+        titleFontSize:      '16px',
         titleAlign:         'left',
         message:            'No Message',
         messageFontColor:   '#FFFFFF',

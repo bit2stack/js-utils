@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BitSnackbar - pure js component</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./dist/bit-snackbar.css" media="screen" charset="utf-8"> 
+        <link rel="stylesheet" href="./demo/css/demo.css" media="screen" charset="utf-8"> 
+    </head>
+
+    <body class="text-body">
+        <header class="sticky-top
+                       d-flex
+                       justify-content-center
+                       bg-light
+                       border-bottom
+                       border-secondary-subtle
+                       border-1
+                       mb-3">
+            <h1 class="fs-4 fw-semibold my-2 text-body">BitSnackbar Document</h1> 
+        </header>
+
+        <div class="container">
+
+            <aside class="menu">
+                <div class="card">
+                    <div class="card-header bg-light">Document Section</div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#introduction">Introduction</a></li>
+                        <li class="list-group-item"><a href="#demo">Demo</a></li>
+                        <li class="list-group-item"><a href="#feature">Feature</a></li>
+                        <li class="list-group-item"><a href="#install">Install</a></li>
+                        <li class="list-group-item"><a href="#quick-start">Quick Start</a></li>
+                        <li class="list-group-item"><a href="#syntex">Option Syntex</a></li>
+                        <li class="list-group-item"><a href="#global-options">Globla Options</a></li>
+                        <li class="list-group-item"><a href="#header-options">Header Options</a></li>
+                        <li class="list-group-item"><a href="#message-options">Message Options</a></li>
+                        <li class="list-group-item"><a href="#action-options">Action Options</a></li>
+                        <li class="list-group-item"><a href="#event">Event</a></li>
+                    </ul>
+            </aside>
+
+            <article class="content">
+            
+                <h2 id="introduction">Introduction</h2>
+                <p>The <strong>BitSnackbar</strong> is a message component developed using pure JavaScript and CSS, designed to provide more suitable notification functionality for users by adding various options based on the traditional snackbar format.</p>
+
+                <h2 id="demo" class="mt-4">Demo</h2>
+                <p>You can quickly see the functionality of the snackbar through the control panel page without complex explanations.
+                <p><a href="http://www.bit-stack.com/demo/control-panel.html">www.bit-stack.com/demo/control-panel</a></p>
+
+                <h2 id="feature" class="mt-4">Feature</h2>
+                <p>The <strong>BitSnackbar</strong> is divided into three areas: header, message, and action, allowing users to configure the snackbar&#39;s functionality through options for each area.</p>
+
+                <div style="text-align: center;"><img src="./demo/img/feature.png" alt="bit-snackbar feature image" style="width: 40%;"></div>
+
+                <ol class="mt-3" style="line-height: 30px;">
+                    <li> Header Area : Convey messages to users through text, icons, and background colors.
+                        <img src="./demo/img/feature_h.png" alt="bit-snackbar header feature image" style="width: 90%;">
+                    </li>    
+                    <li> Message Area : Display messages in text form. It can include a title and a main message.</li>
+                    <li> Action Area : Help user interaction through buttons or text
+                        <img src="./demo/img/feature_a.png" alt="bit-snackbar header feature image" style="width: 60%;">
+                    </li>
+                </ol>
+
+                <h2 id="install" class="mt-4">Install</h2>
+                <ol>
+                    <li>Download the project.</li>
+                    <li>Copy the bit-snackbar.css and bit-snackbar.js files from the dist folder to your desired location.</li>
+                    <li>Place the CSS and JS files appropriately in the head and body sections for use.
+                </ol>
+                <pre><code>
+                <span>&lt;<span class="code-tag">link</span> <span class="code-attr">rel</span>=<span class="code-str">"stylesheet"</span> <span class="code-attr">type</span>=<span class="code-str">"text/css"</span> <span class="code-attr">href</span>=<span class="code-str">"dist/bit-snackbar.min.css"</span> /&gt;</span>
+                <span>&lt;<span class="code-tag">script</span> <span class="code-attr">type</span>=<span class="code-str">"text/javascript"</span> <span class="code-attr">src</span>=<span class="code-str">"dist/bit-snackbar.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="code-tag">script</span>&gt;</span>
+                </code></pre>
+                </li>
+                
+
+                <h2 id="quick-start" class="mt-4">Quick Start</h2>
+                <p>Before taking a closer look at the specific options of snackbar&#39;s each area, you can easily and quickly implement notification functionality in typical situations using the predefined features of the <strong>BitSnackbar</strong>, as shown in the example below.</p>
+                <pre><code>
+                <span class="code-class">BitSnackbar</span><span>.tiny</span>({<span class="code-attr">message</span>:<span class="code-str">'BitSnackbar message example'</span>, <span class="code-attr">position:</span><span class="code-str">'top-center'</span>});
+                <span class="code-class">BitSnackbar</span><span>.info</span>({<span class="code-attr">message</span>:<span class="code-str">'BitSnackbar message example'</span>, <span class="code-attr">position:</span><span class="code-str">'top-center'</span>});
+                <span class="code-class">BitSnackbar</span><span>.success</span>({<span class="code-attr">message</span>:<span class="code-str">'BitSnackbar message example'</span>, <span class="code-attr">position:</span><span class="code-str">'top-center'</span>});
+                <span class="code-class">BitSnackbar</span><span>.warning</span>({<span class="code-attr">message</span>:<span class="code-str">'BitSnackbar message example'</span>, <span class="code-attr">position:</span><span class="code-str">'top-center'</span>});
+                <span class="code-class">BitSnackbar</span><span>.danger</span>({<span class="code-attr">message</span>:<span class="code-str">'BitSnackbar message example'</span>, <span class="code-attr">position:</span><span class="code-str">'top-center'</span>});
+                </code></pre>
+                <p>In this case, the message must be provided, and if the position is not specified, it will default to <code>top-center</code>. If no message is entered, the snackbar will display the default message, <code>No Message</code>.</p>
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Control</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Default Snackbar</td>
+                            <td><button type="button" class="btn-dark" onclick="BitSnackbar.show()">show</button> </td>
+                        </tr>
+                        <tr>
+                            <td> Built-in Snackbar</td>
+                            <td>
+                                <button type="button" class="btn-dark"      onclick="BitSnackbar.tiny({message:'BitSnackbar message example', position:'top-center'})">tiny</button>
+                                <button type="button" class="btn-success"   onclick="BitSnackbar.info({message:'BitSnackbar message example', position:'top-center'})">info</button>
+                                <button type="button" class="btn-primary"   onclick="BitSnackbar.success({message:'BitSnackbar message example', position:'top-center'})">success</button>
+                                <button type="button" class="btn-warning"   onclick="BitSnackbar.warning({message: 'BitSnackbar message example', position:'top-center'})">warning</button>
+                                <button type="button" class="btn-danger"    onclick="BitSnackbar.danger({message: 'BitSnackbar message example', position:'top-center'})">danger</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="options" class="mt-4">Options</h2>
+                <h3 id="syntex" class="mt-3">Syntex</h3>
+                <p>Options are set using the format <code>{option-name:option-value}</code> by connecting the option name and value with a <code>:</code> inside the <code>{}</code>. You can use <code>,</code> to apply multiple options in succession. The configured option values can be passed as arguments to the <code>BitSnackbar.show()</code> function to apply the options. Additionally, the basic functions introduced in the previous paragraph, such as <code>tiny()</code> and <code>info()</code>, can also apply the desired options.</p>
+                <pre><code>
+                    <span class="code-class">BitSnackbar</span><span>.show</span>({<span class="code-attr">showHeader</span>:<span class="code-str">true</span>, <span class="code-attr">headerColor</span>:<span class="code-str">'info'</span>, <span class="code-attr">headerIcon</span>:<span class="code-str">'info'</span>})
+                </code></pre>
+
+                <h3 id="global-options" class="mt-3">Global Options</h3>
+                <p>Global options are settings that determine the basic behavior of the <strong>BitSnackbar</strong>. In the global options, you can configure the background color and position of the snackbar, as well as hide the header and action areas.</p>
+                <table class="table responsive align-middle"> 
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th style="width: 120px;"> Default</th>
+                            <th>Control</th>
+                            <th>Descriptions</th>
+                        </tr> 
+                    </thead> 
+                    <tbody>
+                        <tr>
+                            <td>bgColor</td>
+                            <td>string</td>
+                            <td>#323232</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show()" class="btn-dark">default</button>
+                                <button type="button" class="btn-indigo" onclick="BitSnackbar.show({bgColor: '#6610f2'})">changed </button>
+                            </td>
+                            <td>Snackbar background color. Color options such as hex and rgb</td>
+
+                        </tr>
+                        <tr>
+                            <td>position</td> 
+                            <td>string</td>
+                            <td>top-center</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show({position: 'top-left'})">top-left</button>
+                                <button type="button" onclick="BitSnackbar.show({position:'top-center'})" class="btn-dark">top-center</button>
+                                <button type="button" onclick="BitSnackbar.show({position:'top-right'})">top-right</button>
+                                <button type="button" onclick="BitSnackbar.show({position:'bottom-left'})">bottom-left</button>
+                                <button type="button" onclick="BitSnackbar.show({position: 'bottom-center'})">bottom-center</button> 
+                                <button type="button" onclick="BitSnackbar.show({position: 'bottom-right'})">bottom-right</button> 
+                                <button type="button" onclick="BitSnackbar.show({position:'bottom-right'})">bottom-right</button>
+                            </td>
+                            <td>Combinations of top or bottom with left, right, or center values to set the snackbar's position. eg. top-center, bottom-right</td>
+                        </tr>
+                        <tr>
+                            <td>opacity</td>
+                            <td>number</td>
+                            <td>1</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show({opacity:1})" class="btn-dark">opacity 1</button>
+                                <button type="button" onclick="BitSnackbar.show({opacity:.7})">opacity 0.7</button>
+                                <button type="button" onclick="BitSnackbar.show({opacity:.5})">opacity 0.5</button>
+                            </td>
+                            <td>Snackbar opacity. Decimal values between 0 and 1</td>
+                        </tr>
+                        <tr>
+                            <td>margin</td>
+                            <td>string</td>
+                            <td>10px</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show({margin:'0'})">margin Opx</button>
+                                <button type="button" onclick="BitSnackbar.show({margin:'10px'})" class="btn-dark" >margin 10px</button>
+                                <button type="button" onclick="BitSnackbar.show({margin:'20px'})">margin 24px</button>
+                                <button type="button" onclick="BitSnackbar.show({margin:'2rem'})">margin 2rem</button>
+                            </td>
+                            <td>Snackbar margin. px, Size elements like px, em, rem</td>
+                        </tr>
+                        <tr>
+                            <td>width</td>
+                            <td>string</td>
+                            <td>auto</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show()" class="btn-dark"> auto</button>
+                                <button type="button" onclick="BitSnackbar.show({width: '100%'})">width 100%</button>
+                                <button type="button" onclick="BitSnackbar.show({width: '200px'})"> width 200</button>
+                            </td>
+                            <td>Snackbar width. On screens larger than 640px, the max width is set to 568px. </td>
+                        </tr>
+                        <tr>
+                            <td>duration</td>
+                            <td>number</td>
+                            <td>3500</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show({duration:1000})">1000</button>
+                                <button type="button" onclick="BitSnackbar.show({duration:3500})" class="btn-dark" >3500</button>
+                                <button type="button" onclick="BitSnackbar.show({duration: 7000})">7000</button>
+                                <button type="button" onclick="BitSnackbar.show({duration: 10000})">10000</button>
+                            </td>
+                            <td>Snackbar presentation time on the screen. 1000 = 1s</td>
+                        </tr>
+                        <tr>
+                            <td>autoHide</td> 
+                            <td>boolean</td> 
+                            <td>true</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show()" class="btn-dark">auto hide</button>
+                                <button type="button" onclick="BitSnackbar.show({autoHide:false})"> non auto hide</button>
+                                <button type="button" onclick="BitSnackbar.close()">close </button> 
+                            </td>
+                            <td>Snackbar presentation time on the screen. 1000 = 1s</td>
+                        </tr>
+                        <tr>
+                            <td>showHeader</td>
+                            <td>boolean</td>
+                            <td>false</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show()" class="btn-dark">no header</button>
+                                <button type="button" onclick="BitSnackbar.show({showHeader:true, headerColor: 'info'})"> only header color</button>
+                                <button type="button" onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO', headerLabelColor:'info'})">label + label Color</button>
+                                <button type="button" onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO', headerLabelBgColor:'info'})">label + label BgColor</button> 
+                                <button type="button" onclick="BitSnackbar.show({showHeader:true, headerColor: 'info', headerIcon:'info'})"> icon + header color</button> 
+                            </td>
+                            <td>Visibility of the header area</td>
+                        </tr>
+                        <tr>
+                            <td>showAction</td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show()" class="btn-dark">action</button>
+                                <button type="button" onclick="BitSnackbar.show({showAction:false})">no action</button>
+                            </td>
+                            <td>Visibility of the header area</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="header-options" class="mt-3">Header Options</h3>
+                <p>The header area conveys the message through color and icons. By default, the snackbar does not include a header. To include a header, you must specify the <code>showHeader: true</code> option. The options used in the header area are as follows.</p>
+                <table class="table responsive align-middle"> 
+                    <thead>
+                        <tr>
+                            <th>Name</th> 
+                            <th>Type</th>
+                            <th style="width: 120px;"> Default</th> 
+                            <th>Control</th>
+                            <th>Descriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>headerColor</td>
+                            <td>string</td>
+                            <td>null</td>
+                            <td>
+                                <button type="button" class="btn-dark"      onclick="BitSnackbar.show({showHeader:true})">no color</button>
+                                <button type="button" class="btn-success"   onclick="BitSnackbar.show({showHeader:true, headerColor: 'info'})"> info</button> 
+                                <button type="button" class="btn-primary"   onclick="BitSnackbar.show({showHeader:true, headerColor: 'success'})">success </button> 
+                                <button type="button" class="btn-warning"   onclick="BitSnackbar.show({showHeader:true, headerColor: 'warning'})">warning</button> 
+                                <button type="button" class="btn-danger"    onclick="BitSnackbar.show({showHeader:true, headerColor: 'danger'})">danger</button> 
+                                <button type="button" class="btn-indigo"    onclick="BitSnackbar.show({showHeader:true, headerColor: '#6610f2'})">custom</button>
+                            </td>
+                            <td>Background color of the header area Four predefined colors: <br>info, success, warning, and danger<br>
+                                Additionally, colors such as hex and rgb can be applied.</td>
+                        </tr>
+                        <tr>
+                            <td>headerLabel</td>
+                            <td>string</td> 
+                            <td>null</td>
+                            <td>
+                                <button type="button" class="btn-dark" onclick="BitSnackbar.show({showHeader:true})">no label </button>
+                                <button type="button" onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO'})">label</button>
+                                <button type="button" onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO', headerLabelColor: 'info'})"> label + label Color</button>
+                                <button type="button" onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO', headerLabelBgColor:'info'})"> label + label BgColor</button> 
+                                <button type="button" onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO', headerColor: 'info'})">label + header Color</button> 
+                            </td>
+                            <td>Text to be displayed in the header</td>
+                        </tr>
+                    <tr>
+                        <td>headerLabelColor</td>
+                        <td>string</td>
+                        <td>#FFFFFF</td>
+                        <td>
+                            <button type="button" class="btn-dark" onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO'})">white</button>
+                            <button type="button" class="btn-success" onclick="BitSnackbar.show({showHeader:true, headerLabel:'INFO', headerLabelColor:'info'})"> info</button>
+                            <button type="button" class="btn-primary" onclick="BitSnackbar.show({showHeader:true, headerLabel:'SUCCESS', headerLabelColor:'success'})">success </button>
+                            <button type="button" class="btn-warning" onclick="BitSnackbar.show({showHeader:true, headerLabel:'WARNING', headerLabelColor:'warning'})">warning</button>
+                            <button type="button" class="btn-danger" onclick="BitSnackbar.show({showHeader:true, headerLabel:'DANGER', headerLabelColor:'danger'})">danger</button>
+                            <button type="button" class="btn-indigo" onclick="BitSnackbar.show({showHeader:true, headerLabel: 'CUSTOM', headerLabelColor: '#673ab7'})">custom</button>
+                        </td>
+                        <td>Header label color Four predefined colors: info, success, warning, and danger<br>
+                        Additionally, colors such as hex and rgb can be applied.</td>
+                    </tr>
+                    <tr>
+                        <td>headerLabelBgColor</td>
+                        <td>string</td>
+                        <td>null</td>
+                        <td>
+                            <button type="button" class="btn-dark"      onclick="BitSnackbar.show({showHeader:true, headerLabel: 'INFO'})">no bgcolor</button>
+                            <button type="button" class="btn-success"   onclick="BitSnackbar.show({showHeader:true, headerLabel: 'INFO', headerLabelBgColor:'info'})">info</button>
+                            <button type="button" class="btn-primary"   onclick="BitSnackbar.show({showHeader:true, headerLabel: 'SUCCESS', headerLabelBgColor: 'success'})">success</button>
+                            <button type="button" class="btn-warning"   onclick="BitSnackbar.show({showHeader:true, headerLabel: 'WARNING', headerLabelBgColor: 'warning'})">warning</button>
+                            <button type="button" class="btn-danger"    onclick="BitSnackbar.show({showHeader:true, headerLabel: 'DANGER', headerLabelBgColor:'danger'})">danger</button>
+                            <button type="button" class="btn-indigo"    onclick="BitSnackbar.show({showHeader:true, headerLabel: 'CUSTOM', headerLabelBgColor: '#673ab7'})">custom</button>
+                        </td>
+                        <td>Background color of the header label Four predefined colors: <br>info, success, warning, and danger<br>
+                            Additionally, colors such as hex and rgb can be applied.</td>
+                    </tr>
+                    <tr>
+                        <td>headerlcon</td>
+                        <td>string</td>
+                        <td>null</td>
+                        <td>
+                            <button type="button" class="btn-dark"      onclick="BitSnackbar.show({showHeader:true})">no icon</button>
+                            <button type="button"                       onclick="BitSnackbar.show({showHeader:true, headerColor:'info', headerIcon:'info'})">info icon</button>
+                            <button type="button" class="btn-success"   onclick="BitSnackbar.show({showHeader:true, headerIcon:'info_colored'})">colored info icon</button>
+                            <button type="button"                       onclick="BitSnackbar.show({showHeader:true, headerColor:'success', headerIcon:'success'})">success icon</button> 
+                            <button type="button" class="btn-primary"   onclick="BitSnackbar.show({showHeader:true, headerIcon:'success_colored'})">colored success icon</button>
+                            <button type="button"                       onclick="BitSnackbar.show({showHeader:true, headerColor:'warning', headerIcon: 'warning'})">warn icon</button>
+                            <button type="button" class="btn-warning"   onclick="BitSnackbar.show({showHeader:true, headerIcon:'warning_colored'})">colored warn icon</button>
+                            <button type="button"                       onclick="BitSnackbar.show({showHeader:true, headerColor:'danger', headerIcon:'danger'})"> danger icon</button> 
+                            <button type="button" class="btn-danger"    onclick="BitSnackbar.show({showHeader:true, headerIcon:'danger_colored'})">colored danger icon</button>
+                            <button type="button"                       onclick="BitSnackbar.show({showHeader:true, headerIcon:'question'})">question icon</button>
+                        </td>
+                        <td>Built-in icons displayed in the header area. There are five icons:<br> info, success, warning, danger and question.
+                            By adding '_colored' (e.g., info_colored), you can insert icons in predefined
+                            colors except the question button. The default icons without color are white.</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="message-options" class="mt-3">Message Options</h3>
+                <p>The message area displays the message in text form. Depending on the situation, a title can be included. To include a title, you need to input the <code>title</code> option. By default, the title is not included, and its initial value is <code>null</code>.</p>
+                <table class="table responsive align-middle"> 
+                    <thead>
+                        <tr>
+                            <th>Name</th> 
+                            <th>Type</th>
+                            <th style="width: 120px;"> Default</th> 
+                            <th>Control</th>
+                            <th>Descriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>title</td>
+                            <td>string</td>
+                            <td>null</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show()" class="btn-dark">no title</button>
+                                <button type="button" onclick="BitSnackbar.show({title:'TITLE'})">with title</button>
+                            </td>
+                            <td>Title text. The default setting is not to display.</td>
+                        </tr>
+                        <tr>
+                            <td>titleFontColor</td>
+                            <td>string</td>
+                            <td>#FFFFFF</td>
+                            <td>
+                                <button type="button" class="btn-dark"   onclick="BitSnackbar.show({title:'TITLE'})">default</button>
+                                <button type="button" class="btn-indigo" onclick="BitSnackbar.show({title:'TITLE', titleFontColor:'#673ab7'})">custom </button>
+                            </td>
+                            <td>Colors such as hex and rgb can be applied.</td>
+                        </tr>
+                        <tr>
+                            <td>titleFontSize</td>
+                            <td>string</td>
+                            <td>16px</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show({title:'TITLE', titleFontSize:'15px'})">15px</button>
+                                <button type="button" onclick="BitSnackbar.show({title:'TITLE', titleFontSize:'16px'})" class="btn-dark" >16px</button>
+                                <button type="button" onclick="BitSnackbar.show({title:'TITLE', titleFontSize:'20px'})">20px</button>
+                            </td>
+                            <td>Size elements like px, em, rem</td>
+                        </tr>
+                        <tr>
+                            <td>titleAlign</td>
+                            <td>string</td>
+                            <td>left</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show({title:'TITLE', titleAlign:'left'})" class="btn-dark">left</button>
+                                <button type="button" onclick="BitSnackbar.show({title:'TITLE', titleAlign:'center'})">center</button>
+                                <button type="button" onclick="BitSnackbar.show({title:'TITLE', titleAlign:'right'})">right</button>
+                            </td>
+                            <td>Title horizontal alignment. There are three options: left, center, and right</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>string</td>
+                            <td>No Message</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show()" class="btn-dark">default</button>
+                                <button type="button" onclick="BitSnackbar.show({message:'Have a Nice Day!'})">with message</button>
+                            </td>
+                            <td>Main snackbar message.</td>
+                        </tr>
+                        <tr>
+                            <td>messageFontColor</td>
+                            <td>string</td>
+                            <td>#FFFFFF</td>
+                            <td>
+                                <button type="button" class="btn-dark"   onclick="BitSnackbar.show({message:'Have a Nice Day!'})">default</button>
+                                <button type="button" class="btn-indigo" onclick="BitSnackbar.show({message:'Have a Nice Day!', messageFontColor:'#673ab7'})">custom </button>
+                            </td>
+                            <td>Colors such as hex and rgb can be applied.</td>
+                        </tr>
+                        <tr>
+                            <td>messageFontSize</td>
+                            <td>string</td>
+                            <td>14px</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show({message:'Have a Nice Day!', messageFontSize:'12px'})">12px</button>
+                                <button type="button" onclick="BitSnackbar.show({message:'Have a Nice Day!', messageFontSize:'14px'})" class="btn-dark" >14px</button>
+                                <button type="button" onclick="BitSnackbar.show({message:'Have a Nice Day!', messageFontSize:'17px'})">17px</button>
+                            </td>
+                            <td>Size elements like px, em, rem</td>
+                        </tr>
+                        <tr>
+                            <td>messageAlign</td>
+                            <td>string</td>
+                            <td>left</td>
+                            <td>
+                                <button type="button" onclick="BitSnackbar.show({message:'Have a Nice Day!', messageAlign:'left'})" class="btn-dark">left</button>
+                                <button type="button" onclick="BitSnackbar.show({message:'Have a Nice Day!', messageAlign:'center'})">center</button>
+                                <button type="button" onclick="BitSnackbar.show({message:'Have a Nice Day!', messageAlign:'right'})">right</button>
+                            </td>
+                            <td>Message horizontal alignment. There are three options: left, center, and right.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="action-options" class="mt-3">Action Options</h3>
+                <p>The action area supports user interaction through buttons or text, allowing users to close the snackbar or handle specific events designated by them. In a typical snackbar, the number of actions is usually limited to two or fewer; however, the <strong>BitSnackbar</strong> does not impose any limits on the number of actions.</p>
+                <p>If there is only one action, as shown in the example below, specify the icon or text to be displayed, along with the function to execute when the user clicks it.</p>
+                <pre><code>
+                    {<span class="code-attr">label</span>:<span class="code-str">'ACTION'</span>, <span class="code-attr">function</span>:<span class="code-str">()=&gt;alert('Action Function')</span>} or
+                    {<span class="code-attr">icon</span>: <span class="code-str">'close'</span>, <span class="code-attr">function</span>:<span class="code-str">()=&gt;alert('ACTION Function')</span>}
+                </code></pre>
+                <p>If you want to use two or more actions, place all the actions inside <code>[]</code> and connect each action using a <code>,</code></p>
+                <pre><code>
+                    [ {<span class="code-attr">label</span>:<span class="code-str">'ACTION'</span>, <span class="code-attr">function</span>:<span class="code-str">()=&gt;alert('Action Function')</span>},
+                    {<span class="code-attr">icon</span>: <span class="code-str">'close'</span>, <span class="code-attr">function</span>:<span class="code-str">()=&gt;alert('ACTION Function')</span>} ]
+                </code></pre>
+                <p>The items that will be configured to execute the action are as follows. When using a label, you can additionally specify the color and font size of the label. The color and font size options do not apply to icons.</p>
+                <table class="table responsive align-middle"> 
+                    <thead>
+                        <tr>
+                            <th>Name</th> 
+                            <th>Type</th>
+                            <th style="width: 120px;"> Default</th> 
+                            <th>Control</th>
+                            <th>Descriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>icon</td>
+                            <td>string</td>
+                            <td>close</td>
+                            <td>
+                                <button type="button" class="btn-dark" onclick="BitSnackbar.show()">close icon</button>
+                                <button type="button" onclick="BitSnackbar.show({actions:[{icon: 'arrow_down', function:()=>alert('ACTION TEST')}, {icon: 'close', function:()=>BitSnackbar.close()}]})">icon + icon</button>
+                            </td>
+                            <td>Two built-in icons are available: close and arrow_down.</td>
+                        </tr>
+                        <tr>
+                            <td>label</td>
+                            <td>string</td>
+                            <td>null</td>
+                            <td>
+                                <button type="button" class="btn-dark" onclick="BitSnackbar.show()">no label</button>
+                                <button type="button" onclick="BitSnackbar.show({actions:{label:'DISMISS', function:()=>BitSnackbar.close()}})">with label</button>
+                                <button type="button" onclick="BitSnackbar.show({actions:[{label:'MORE', function:()=>alert('MORE ACTION')},{label:'DISMISS', function:()=>BitSnackbar.close()}]})">label + label</button>
+                                <button type="button" onclick="BitSnackbar.show({actions:[{label:'MORE', function:()=>alert('MORE ACTION')},{icon: 'close', function:()=>BitSnackbar.close()}]})">label + icon</button>
+                            </td>
+                            <td>Action label.</td>
+                        </tr>
+                        <tr>
+                            <td>color</td>
+                            <td>string</td>
+                            <td>#4caf50</td>
+                            <td>
+                                <button type="button" class="btn-dark"   onclick="BitSnackbar.show({actions:{label:'DISMISS', function:()=>BitSnackbar.close()}})">default</button>
+                                <button type="button" onclick="BitSnackbar.show({actions:{label:'DISMISS', color:'white', function:()=>BitSnackbar.close()}})">custom(white)</button>
+                                <button type="button" class="btn-indigo" onclick="BitSnackbar.show({actions:{label:'DISMISS', color:'#673ab7', function:()=>BitSnackbar.close()}})">custom</button>
+                            </td>
+                            <td>Action label font color. Colors such as hex and rgb can be applied.</td>
+                        </tr>
+                        <tr>
+                            <td>fontSize</td>
+                            <td>string</td>
+                            <td>inherit</td>
+                            <td>
+                                <button type="button" class="btn-dark"   onclick="BitSnackbar.show({actions:{label:'DISMISS', function:()=>BitSnackbar.close()}})">default</button>
+                                <button  type="button" onclick="BitSnackbar.show({actions:{label:'DISMISS', fontSize:'17px', function:()=>BitSnackbar.close()}})">17px</button>
+                            </td>
+                            <td>Action label font size. Size elements like px, em, rem</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="event" class="mt-4">Event</h2>
+                <p>You can use the <code>onClose</code> event to define an event that will execute after the <strong>BitSnackbar</strong> has closed (disappeared from the screen).<br>Below is an example that shows a simple alert box after the snackbar closes.</p>
+                <pre><code>
+                    <span class="code-class">Snackbar</span>.show({<span class="code-attr">message</span>:<span class="code-str">'onClose option demo'</span>, <span class="code-attr">onClose</span>:<span class="code-str">()=&gt;alert('AFTER CLOSE ACTION')</span>})
+                </code></pre>
+                <table class="table responsive align-middle"> 
+                    <thead>
+                        <tr>
+                            <th>Name</th> 
+                            <th>Type</th>
+                            <th style="width: 120px;"> Default</th> 
+                            <th>Control</th>
+                            <th>Descriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>onClose</td>
+                            <td>function</td>
+                            <td>null</td>
+                            <td>
+                                <button onclick="BitSnackbar.show({duration:1000, onClose:()=>alert('AFTER CLOSE ACTION')})">onClose</button>
+                            </td>
+                            <td>Event will execute after the BitSnackbar has closed (disappeared from the screen).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+        
+        <footer class=" d-flex justify-content-center" style="margin-top: 100px; margin-bottom: 30px;">
+            <a href="https://github.com/bit2stack/bit-snackbar" target='_blank' class="align-middle mx-3 mt-1">
+                <img src="./demo/img/github-logo.png" alt="github logo" width="35" >
+            </a>
+            <a href="https://github.com/bit2stack/bit-snackbar/archive/refs/heads/main.zip" target='_blank' class="mx-3">
+                <img src="./demo/img/download.png" alt="github logo" width="40" >
+            </a>
+        </footer>
+
+        <script src="./dist/bit-snackbar.js" charset="utf-8"></script>
+        <script>
+            var btn = document.getElementsByTagName('button');
+            for(var i=0; i<btn.length; i++)
+                {
+                var bcolor = btn[i].className!=''?btn[i].className:'btn-secondary';
+                btn[i].className = 'btn btn-sm '+bcolor;
+            }
+        </script>
+    </body>
+</html>

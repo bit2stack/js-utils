@@ -3,12 +3,15 @@
 ## Introduction
 The **BitSnackbar** is a message component developed using pure JavaScript and CSS, designed to provide more suitable notification functionality for users by adding various options based on the traditional snackbar format.
 
-<!--[![snackbar](http://www.demo.com/img/snackbar_logo.png)](http://www.demo.com/snackbar)-->
+<p align="center">
+    <img src='http://www.bit-stack.com/demo/img/feature.png' alt='bit-snackbar feature image' style='width: 350px;'>
+</p>
 
-## Demo
+
+## Document and Demo
 For more information about the **BitSnackbar**, please refer to the demo site below. You can quickly see the functionality of the snackbar through the control panel page without complex explanations.
-<!--- [www.demo.com](www.demo.com)-->
-- [www.bit-stack.com/control-panel](http://www.bit-stack.com/)
+- [www.bit-stack.com](http://www.bit-stack.com/)
+- [www.bit-stack.com/demo/control-panel](http://www.bit-stack.com/demo/control-panel.html)
 
 ## Install
 1. Download the project.
@@ -74,7 +77,7 @@ The message area displays the message in text form. Depending on the situation, 
 |----------|:---:|:-----:|-----------|
 |title|string|null|Title text. The default setting is not to display. |
 |titleFontColor|string|#FFFFFF|Colors such as hex and rgb can be applied.|
-|titleFontSize|string|17px| Size elements like px, em, rem|
+|titleFontSize|string|16px| Size elements like px, em, rem|
 |titleAlign|string|left|Title horizontal alignment. There are three options: left, center, and right.|
 |message|string|No Message|Main snackbar message.|
 |messageFontColor|string|#FFFFFF|Colors such as hex and rgb can be applied.|
