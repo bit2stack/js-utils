@@ -1,0 +1,68 @@
+.bw-window
+{
+    display: none;
+    background-color: #FFF;
+}
+.bw-container
+{
+    position: absolute;
+    box-shadow: 1px 1px 16px 4px rgba(65, 65, 65, 0.1), 0 0 32px rgba(65, 65, 65, 0.1);
+    z-index: 2;
+}
+.bw-modal-background
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.1);
+    backdrop-filter: blur(1px);
+}
+.bw-inner-padding
+{
+    padding: 5px 10px;
+}
+.bw-header
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.bw-header > .label-zone
+{
+    display: flex;
+    align-items: flex-start;
+    font-weight: 600;
+    font-size: 15px;
+}
+.bw-header > .button-zone
+{
+    display: flex;
+    align-items: flex-end;
+}
+
+.bw-header > .button-zone .action
+{
+    background: inherit;
+    display: inline-block;
+    border: none;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+}
+
+.bw-header > .button-zone .action:hover
+{
+  background-color:rgba(150, 150, 150, 0.5);
+  border-radius: 3px;
+  cursor: pointer; 
+}
+
+.bw-move-cursor
+{
+    cursor: move;
+}

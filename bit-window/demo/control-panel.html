@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/bit-window.min.css">
+    <style>
+         p
+        {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+        <p>Lorem10</p>
+</div>
+    <div style="display: flex;">
+        <button onclick="BitWindow.show({target:'winContents'})">Modal</button>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, headerIcon:'info', headerLabel:'Information'})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isDrag:false, position:'around', clickEvent:event, actions:{icon: 'close', function:()=>BitWindow.close()}, onClose:()=>{alert('AFTER CLOSE ACTION');}})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <label onclick="BitWindow.show({target:'winContents', actions:[{icon:'setting', function:()=>alert('setting action fired')},{icon: 'close', function:()=>BitWindow.close()}]})">Modaless</label>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', onClose:()=>{alert('AFTER CLOSE ACTION');}})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+    </div>
+
+    <p style="margin-bottom: 200px;"></p>
+    <div style="display: flex;">
+        <button onclick="BitWindow.show({target:'winContents', isModal:true})">Modal</button>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+    </div>
+
+    <p style="margin-bottom: 200px;"></p>
+    <div style="display: flex;">
+        <button onclick="BitWindow.show({target:'winContents', isModal:true})">Modal</button>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+    </div>
+
+    <p style="margin-bottom: 200px;"></p>
+    <div style="display: flex;">
+        <button onclick="BitWindow.show({target:'winContents', isModal:true})">Modal</button>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+        <span style="margin-left: auto;"></span>
+        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
+    </div>
+
+    <div title="aaa">abc</div>
+    <div id="winContents" class="bw-window">
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Harum nostrum dignissimos unde quidem consectetur iste officia exercitationem<br>Harum nostrum dignissimos unde quidem consectetur iste officia exercitationem</p>
+        </div>
+    </div>
+    
+    <script src="../dist/bit-window.min.js"></script>
+</body>
+</html>
