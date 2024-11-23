@@ -6,6 +6,7 @@
 .bw-container
 {
     position: absolute;
+    background-color: #FFF;
     box-shadow: 1px 1px 16px 4px rgba(65, 65, 65, 0.1), 0 0 32px rgba(65, 65, 65, 0.1);
     z-index: 2;
 }

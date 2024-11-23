@@ -1,104 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../dist/bit-window.min.css">
-    <style>
-         p
-        {
-            margin: 0;
-        }
-    </style>
-</head>
-<body>
-    <div id="wrapper">
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-        <p>Lorem10</p>
-</div>
-    <div style="display: flex;">
-        <button onclick="BitWindow.show({target:'winContents'})">Modal</button>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, headerIcon:'info', headerLabel:'Information'})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isDrag:false, position:'around', clickEvent:event, actions:{icon: 'close', function:()=>BitWindow.close()}, onClose:()=>{alert('AFTER CLOSE ACTION');}})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <label onclick="BitWindow.show({target:'winContents', actions:[{icon:'setting', function:()=>alert('setting action fired')},{icon: 'close', function:()=>BitWindow.close()}]})">Modaless</label>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', onClose:()=>{alert('AFTER CLOSE ACTION');}})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-    </div>
+<html>
+    <head>
+        <!--
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4L6FKEWEW"></script>
+        <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'G-Z4L6FKEWEW');</script>
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BitWindow</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../src/bit-window.css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="./css/demo.css" media="screen" charset="utf-8">
+    </head>
 
-    <p style="margin-bottom: 200px;"></p>
-    <div style="display: flex;">
-        <button onclick="BitWindow.show({target:'winContents', isModal:true})">Modal</button>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-    </div>
+    <body class="text-body">
+        <header class="sticky-top
+                       d-flex
+                       justify-content-center
+                       bg-light
+                       border-bottom
+                       border-secondary-subtle
+                       border-1
+                       mb-3">
+            <h1 class="fs-4 fw-semibold my-2 text-body">BitWindow Control-Panel</h1> 
+        </header>
 
-    <p style="margin-bottom: 200px;"></p>
-    <div style="display: flex;">
-        <button onclick="BitWindow.show({target:'winContents', isModal:true})">Modal</button>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-    </div>
+        <div class="container">
+            <h2 class="fs-3">Quick Start </h2>
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Control</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Default Window</td>
+                        <td><button type="button" class="btn-dark" onclick="BitWindow.show({target:'window1'})">show</button> </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
 
-    <p style="margin-bottom: 200px;"></p>
-    <div style="display: flex;">
-        <button onclick="BitWindow.show({target:'winContents', isModal:true})">Modal</button>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-        <span style="margin-left: auto;"></span>
-        <button onclick="BitWindow.show({target:'winContents', isModal:false, position:'around', clickEvent:event})">Modaless</button>
-    </div>
+            <h2 class="fs-3 mt-5">Global Options</h2> 
+            <table class="table responsive align-middle"> 
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th style="width: 120px;"> Default</th>
+                        <th>Control</th>
+                        <th>Descriptions</th>
+                    </tr> 
+                </thead> 
+                <tbody>
+                    <tr>
+                        <td>target</td>
+                        <td>string</td>
+                        <td>null</td>
+                        <td style="min-width: 170px;">
+                            <button type="button" onclick="BitWindow.show({target:'window1', headerLabel:'window #1'})">window1</button>
+                            <button type="button" class="btn-indigo" onclick="BitWindow.show({target:'window2', headerLabel:'window #2'})">window2</button>
+                        </td>
+                        <td>The ID of the window element to be displayed on the screen.</td>
 
-    <div title="aaa">abc</div>
-    <div id="winContents" class="bw-window">
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Harum nostrum dignissimos unde quidem consectetur iste officia exercitationem<br>Harum nostrum dignissimos unde quidem consectetur iste officia exercitationem</p>
+                    </tr>
+                    <tr>
+                        <td>position</td> 
+                        <td>string</td>
+                        <td>center</td>
+                        <td>
+                            <button type="button" onclick="BitWindow.show({target:'window1', position:'center'})" class="btn-dark">center</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', position:'around', clickEvent:event})" >around</button>
+                        </td>
+                        <td>`center` or `around`. When set to `around`, the window will be positioned at the top-left of the clicked location. However, if the window extends beyond the left edge of the screen, it will automatically be positioned at the top-right instead.</td>
+                    </tr>
+                    <tr>
+                        <td>clickEvent</td>
+                        <td>event</td>
+                        <td>null</td>
+                        <td>
+                            <button type="button" onclick="BitWindow.show({target:'window1', position:'around', clickEvent:event})">position-around</button>
+                        </td>
+                        <td>This is a required value when the position is set to `around`. It refers to the user's click event.</td>
+                    </tr>
+                    <tr>
+                        <td>isModal</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>
+                            <button type="button" onclick="BitWindow.show({target:'window1', isModal:true, headerLabel:'window #1'})" class="btn-dark">modal</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', isModal:false, headerLabel:'window #1'})">modalless</button>
+                       </td>
+                        <td>Whether the window is modal.</td>
+                    </tr>
+                    <tr>
+                        <td>isDrag</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>
+                            <button type="button" onclick="BitWindow.show({target:'window1', isDrag:true, headerLabel:'window #1'})" class="btn-dark">draggable</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', isDrag:false, headerLabel:'window #1'})">fixed</button>
+                        </td>
+                        <td>Whether the window is draggable. If set to `false`, the window cannot be dragged.</td>
+                    </tr>
+                    <tr>
+                        <td>showHeader</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>
+                            <button type="button" onclick="BitWindow.show({target:'window1', showHeader:true, headerLabel:'window #1'})" class="btn-dark">header</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', showHeader:false})">headerless</button>
+                        </td>
+                        <td>Whether to display the header. If set to `false`, only the specified element will be shown as the window, without the header.</td>
+                    </tr>
+                    <tr>
+                        <td>cornerRadius</td> 
+                        <td>string</td> 
+                        <td>5px</td>
+                        <td>
+                            <button type="button" onclick="BitWindow.show({target:'window1', cornerRadius:'0px', headerLabel:'window #1'})">0px</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', cornerRadius:'5px', headerLabel:'window #1'})" class="btn-dark">5px</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', cornerRadius:'10px', headerLabel:'window #1'})">10px</button>
+                        </td>
+                        <td>The corner radius value of the window.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="fs-3 mt-5">Header Options(Left Side Label)</h2> 
+            <table class="table responsive align-middle"> 
+                <thead>
+                    <tr>
+                        <th>Name</th> 
+                        <th>Type</th>
+                        <th style="width: 120px;"> Default</th> 
+                        <th>Control</th>
+                        <th>Descriptions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>headerColor</td>
+                        <td>string</td>
+                        <td>#f1f3f4</td>
+                        <td>
+                            <button type="button" class="btn-dark"      onclick="BitWindow.show({target:'window1', headerLabel:'window #1'})">default</button>
+                            <button type="button" class="btn-success"   onclick="BitWindow.show({target:'window1', headerColor:'#04AA6D', headerLabel:'window #1', headerLabelColor:'black'})">green</button> 
+                            <button type="button" class="btn-primary"   onclick="BitWindow.show({target:'window1', headerColor:'#03a9f4', headerLabel:'window #1', headerLabelColor:'black'})">blue</button> 
+                            <button type="button" class="btn-danger"    onclick="BitWindow.show({target:'window1', headerColor:'#F44336', headerLabel:'window #1', headerLabelColor:'black'})">red</button> 
+                            
+                        </td>
+                        <td>The background color of the header area. You can apply colors in formats such as hex, rgb, etc.</td>
+                    </tr>
+                    <tr>
+                        <td>headerlcon</td>
+                        <td>string</td>
+                        <td>notes</td>
+                        <td>
+                            <button type="button" class="btn-dark"      onclick="BitWindow.show({target:'window1'})">notes</button>
+                            <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'info'})">info</button>
+                            <button type="button" class="btn-success"   onclick="BitWindow.show({target:'window1', headerIcon:'info_colored'})">info_colored</button>
+                            <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'success'})">success</button> 
+                            <button type="button" class="btn-primary"   onclick="BitWindow.show({target:'window1', headerIcon:'success_colored'})">success_colored</button> 
+                            <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'warning'})">warning</button> 
+                            <button type="button" class="btn-warning"   onclick="BitWindow.show({target:'window1', headerIcon:'warning_colored'})">warning_colored</button> 
+                            <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'danger'})">danger</button> 
+                            <button type="button" class="btn-danger"    onclick="BitWindow.show({target:'window1', headerIcon:'danger_colored'})">danger_colored</button> 
+                            <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'arrow_down'})">arrow_down</button> 
+                            <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'question'})">question</button> 
+                            <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'setting'})">setting</button> 
+                            <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'menu'})">menu</button> 
+                        </td>
+                        <td>The built-in icon displayed on the left side of the header. <br> 
+                            There are 10 built-in icons: arrow_down, close, danger, info, menu, notes, question, setting, success, and warning.<br>
+                            For the four icons — info, success, warn, and danger — you can append _colored (e.g., `info_colored`) to insert predefined colored versions of the icons.</td>
+                    </tr>
+                    <tr>
+                        <td>headerLabel</td>
+                        <td>string</td> 
+                        <td>null</td>
+                        <td>
+                            <button type="button" class="btn-dark" onclick="BitWindow.show({target:'window1'})">no label</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', headerLabel:'window #1'})">with label</button>
+                        </td>
+                        <td>The text displayed on the left side of the header.</td>
+                    </tr>
+                    <tr>
+                        <td>headerLabelColor</td>
+                        <td>string</td>
+                        <td>#5f6368</td>
+                        <td>
+                            <button type="button" class="btn-dark"      onclick="BitWindow.show({target:'window1', headerLabel:'window #1'})">default</button>
+                            <button type="button" class="btn-success"   onclick="BitWindow.show({target:'window1', headerLabel:'window #1', headerLabelColor:'#04AA6D'})">green</button>
+                            <button type="button" class="btn-primary"   onclick="BitWindow.show({target:'window1', headerLabel:'window #1', headerLabelColor:'#03a9f4'})">blue</button>
+                            <button type="button" class="btn-warning"   onclick="BitWindow.show({target:'window1', headerLabel:'window #1', headerLabelColor:'#ff9800'})">yellow</button>
+                            <button type="button" class="btn-danger"    onclick="BitWindow.show({target:'window1', headerLabel:'window #1', headerLabelColor:'#F44336'})">red</button>
+                        </td>
+                        <td>The color of the header label. You can apply colors in formats such as hex, rgb, etc.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="fs-3 mt-5">Header Option(Right Side Actions)</h2> 
+            <table class="table responsive align-middle"> 
+                <thead>
+                    <tr>
+                        <th>Name</th> 
+                        <th>Type</th>
+                        <th style="width: 120px;"> Default</th> 
+                        <th>Control</th>
+                        <th>Descriptions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>actions</td>
+                        <td>object</td>
+                        <td>close</td>
+                        <td>
+                            <button type="button" class="btn-dark" onclick="BitWindow.show({target:'window1'})">close icon</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', actions:{icon:'arrow_down', function:()=>BitWindow.close()}})">arrow_down icon</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', actions:{icon:'setting', function:()=>alert('Do Action!!')}})">setting icon</button>
+                            <button type="button" onclick="BitWindow.show({target:'window1', actions:[{icon:'setting', function:()=>alert('Do Action!!')},{icon:'close',function:()=>BitWindow.close()}]})">icon + icon</button>
+                        </td>
+                        <td>Two built-in icons are available: close and arrow_down.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h2 class="fs-3 mt-5">Event</h2> 
+            <table class="table responsive align-middle"> 
+                <thead>
+                    <tr>
+                        <th>Name</th> 
+                        <th>Type</th>
+                        <th style="width: 120px;"> Default</th> 
+                        <th>Control</th>
+                        <th>Descriptions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BitWindow.close()</td>
+                        <td>function</td>
+                        <td>-</td>
+                        <td>
+                            <button type="button" onclick="BitWindow.show({target:'window3', actions:null})">example</button>
+                        </td>
+                        <td>Close the window that is displayed on the screen</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-    
-    <script src="../dist/bit-window.min.js"></script>
-</body>
+
+        <div id="window1" class="bw-window" style="width: 350px; padding: 10px;">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. placeat, earum cumque, nostrum quibusdam autem, impedit incidunt velit voluptate tenetur iste ea? Vel est, delectus facere laboriosam vero placeat dolor natus voluptate corporis officiis dolorem repellendus provident eius aperiam error porro reiciendis illo tempora, non excepturi expedita vitae omnis ipsam.</p>
+        </div>
+
+        <div id="window2" class="bw-window" style="width: 350px; padding: 10px;">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div id="window3" class="bw-window" style="width: 350px; padding: 10px;">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. placeat, earum cumque, nostrum quibusdam autem, impedit incidunt velit voluptate tenetur iste ea? Vel est, delectus facere laboriosam vero placeat dolor natus voluptate corporis officiis dolorem repellendus provident eius aperiam error porro reiciendis illo tempora, non excepturi expedita vitae omnis ipsam.</p>
+            <div class="mb-3">
+                <button type="button" class="btn-danger" onclick="BitWindow.close()">Close</button>
+            </div>
+        </div>
+        
+        <footer class=" d-flex justify-content-center" style="margin-top: 100px; margin-bottom: 30px;">
+            <a href="https://github.com/bit2stack/bit-snackbar" target='_blank' class="align-middle mx-3 mt-1">
+                <img src="img/github-logo.png" alt="github logo" width="35" >
+            </a>
+            <a href="https://github.com/bit2stack/bit-snackbar/archive/refs/heads/main.zip" target='_blank' class="mx-3">
+                <img src="img/download.png" alt="github logo" width="40" >
+            </a>
+            <a href="mailto:dev.smtraders@gmail.com" class="mx-3">
+                <img src="img/mail.png" alt="dev.smtraders@gmail.com" width="40" >
+            </a>
+        </footer>
+
+        <script src="../src/bit-window.js" charset="utf-8"></script>
+        <script>
+            var btn = document.getElementsByTagName('button');
+            for(var i=0; i<btn.length; i++)
+                {
+                var bcolor = btn[i].className!=''?btn[i].className:'btn-secondary';
+                btn[i].className = 'btn btn-sm '+bcolor;
+            }
+        </script>
+    </body>
 </html>
