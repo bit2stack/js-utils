@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4L6FKEWEW"></script>
+        <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'G-Z4L6FKEWEW');</script>
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BitWindow - pure js component</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../dist/bit-window.min.css" media="screen" charset="utf-8"> 
+        <link rel="stylesheet" href="./css/demo.css" media="screen" charset="utf-8"> 
+    </head>
+    <body class="text-body">
+        <header class="sticky-top
+                       d-flex
+                       justify-content-center
+                       bg-light
+                       border-bottom
+                       border-secondary-subtle
+                       border-1
+                       mb-3">
+            <h1 class="fs-4 fw-semibold my-2 text-body">BitWindow Document</h1> 
+        </header>
+        
+        <div class="container">
+            <aside class="menu">
+                <div class="card">
+                    <div class="card-header bg-light">Document Section</div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#introduction">Introduction</a></li>
+                        <li class="list-group-item"><a href="#demo">Demo</a></li>
+                        <li class="list-group-item"><a href="#feature">Feature</a></li>
+                        <li class="list-group-item"><a href="#install">Install</a></li>
+                        <li class="list-group-item"><a href="#quick-start">Quick Start</a></li>
+                        <li class="list-group-item"><a href="#syntex">Option Syntex</a></li>
+                        <li class="list-group-item"><a href="#global-options">Globla Options</a></li>
+                        <li class="list-group-item"><a href="#header-options-l">Header Options(Left)</a></li>
+                        <li class="list-group-item"><a href="#header-options-r">Header Options(Right)</a></li>
+                        <li class="list-group-item"><a href="#event">Event</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <article class="content">
+                <h2 id="introduction">Introduction</h2>
+                <p><strong>BitWindow</strong> is a component developed using pure JavaScript and CSS to create draggable pop-up windows in both web and mobile environments. It supports various configuration options, enabling developers to easily and quickly create JavaScript windows.</p>
+                
+                <h2 id="demo" class="mt-4">Demo</h2>
+                <p>For more information about <strong>BitWindow</strong>, please refer to the demo site below. You can easily explore the window&#39;s features without complex explanations through the control panel page.</p>
+                <p><a href="http://www.bit-stack.com/bit-window/demo/control-panel.html">www.bit-stack.com/bit-window/demo/control-panel.html</a></p>
+
+                <h2 id="feature" class="mt-4">Feature</h2>
+                <p>The <strong>BitWindow</strong> is mainly divided into a header area and a contents area. The contents area is the section that the developer creates to provide to the user, while the header area displays the window's header. Since the <strong>BitWindow</strong> automatically generates the header area, the developer can easily add it through a few options.</p>
+                <div style="text-align: center;"><img src="./img/feature.png" alt="bit-snackbar feature image" style="width: 50%;"></div>
+                <ol class="mt-3" style="line-height: 30px;">
+                    <li> Header Area : Specify the header icon, title, and actions to close the window or perform additional tasks with icons.</li>
+                    <div style="text-align: center;"><img src="./img/feature_h.png" alt="bit-snackbar header feature image" style="width: 50%;"></div>
+                    <li> Contents Area : Window Contests</li>
+                </ol>
+                
+
+                <h2 id="install" class="mt-4">Install</h2>
+                <ol>
+                    <li>Download the project.</li>
+                    <li>Copy the <code>bit-window.min.css</code> and <code>bit-window.min.js</code> files from the <code>dist</code> folder to your desired location.</li>
+                    <li>Place the CSS and JS files in the appropriate sections of the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> of your HTML.</li>    
+                <pre><code>
+                <span>&lt;<span class="code-tag">link</span> <span class="code-attr">rel</span>=<span class="code-str">"stylesheet"</span> <span class="code-attr">type</span>=<span class="code-str">"text/css"</span> <span class="code-attr">href</span>=<span class="code-str">"dist/bit-snackbar.min.css"</span> /&gt;</span>
+                <span>&lt;<span class="code-tag">script</span> <span class="code-attr">type</span>=<span class="code-str">"text/javascript"</span> <span class="code-attr">src</span>=<span class="code-str">"dist/bit-snackbar.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="code-tag">script</span>&gt;</span>
+                </code></pre>
+
+                    <li>Implement the internal functionality of the window and assign the desired <code>id</code> to the respective area.</li>
+                    <li>To hide the window when the page loads, add the <code>bw-window</code> class to the element.</li>
+                <pre><code>
+                <span>&lt;<span class="code-tag">div</span> <span class="code-attr">id</span>=<span class="code-str">"window1"</span> <span class="code-str">class</span>=<span class="code-str">"bw-window"</span>&gt;
+                ...
+                <span>&lt;/<span class="code-tag">div</span>&gt;
+                </code></pre>
+                </ol>
+                
+                <h2 id="quick-start" class="mt-4">Quick Start</h2>
+                <p><strong>BitWindow</strong> automatically adds the window&#39;s header section through option settings. Using global options and header options, users can configure the window&#39;s functionality as desired. Before diving into the specific options for each section, you can quickly and easily implement a pop-up window in typical scenarios using the predefined features of <strong>BitWindow</strong>, as shown in the example below.</p>
+                <pre><code>
+                <span class="code-class">BitWindow</span>.show({<span class="code-attr">target</span>:<span class="code-str">'window1'</span>});
+                </code></pre>
+                <p>By using the <code>BitWindow.show</code> feature, a window is created with an automatically added header that includes a <code>notes</code> icon and a <code>close</code> icon. When the <code>close</code> icon is clicked or when the user clicks outside the window, the window will automatically disappear.</p>
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Control</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Default Window</td>
+                            <td><button type="button" class="btn-dark" onclick="BitWindow.show({target:'window1'})">show</button> </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+                <h2 id="options" class="mt-4">Options</h2>
+                <h3 id="syntex" class="mt-3">Syntex</h3>
+                <p>Options are set by connecting the option name and option value with a <code>:</code> inside <code>{}</code> (e.g., <code>{option-name: option-value}</code>). Multiple options can be used consecutively by separating them with a <code>,</code>. The configured options can then be applied by passing them as arguments to the <code>BitWindow.show()</code> function.<br>The <code>target</code> option is required and must be specified.</p>
+                <pre><code>
+                <span class="code-class">BitWindow</span>.show({<span class="code-attr">target</span>:<span class="code-str">'window1'</span>, <span class="code-attr">isModal</span>:<span class="code-str">false</span>, <span class="code-attr">headerLabel</span>:<span class="code-str">'Information'</span>})
+                </code></pre>
+                
+                <h3 id="global-options" class="mt-3">Global Options</h3>
+                <p>The global options determine the basic behavior of <strong>BitWindow</strong>. With the global options, you can set the window&#39;s position, enable or disable dragging, and hide the header section.</p>
+                <table class="table responsive align-middle"> 
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th style="width: 120px;"> Default</th>
+                            <th>Control</th>
+                            <th>Descriptions</th>
+                        </tr> 
+                    </thead> 
+                    <tbody>
+                        <tr>
+                            <td>target</td>
+                            <td>string</td>
+                            <td>null</td>
+                            <td style="min-width: 170px;">
+                                <button type="button" onclick="BitWindow.show({target:'window1', headerLabel:'window #1'})">window1</button>
+                                <button type="button" class="btn-indigo" onclick="BitWindow.show({target:'window2', headerLabel:'window #2'})">window2</button>
+                            </td>
+                            <td>The ID of the window element to be displayed on the screen.</td>
+    
+                        </tr>
+                        <tr>
+                            <td>position</td> 
+                            <td>string</td>
+                            <td>center</td>
+                            <td>
+                                <button type="button" onclick="BitWindow.show({target:'window1', position:'center'})" class="btn-dark">center</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', position:'around', clickEvent:event})" >around</button>
+                            </td>
+                            <td>`center` or `around`. When set to `around`, the window will be positioned at the top-left of the clicked location. However, if the window extends beyond the left edge of the screen, it will automatically be positioned at the top-right instead.</td>
+                        </tr>
+                        <tr>
+                            <td>clickEvent</td>
+                            <td>event</td>
+                            <td>null</td>
+                            <td>
+                                <button type="button" onclick="BitWindow.show({target:'window1', position:'around', clickEvent:event})">position-around</button>
+                            </td>
+                            <td>This is a required value when the position is set to `around`. It refers to the user's click event.</td>
+                        </tr>
+                        <tr>
+                            <td>isModal</td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>
+                                <button type="button" onclick="BitWindow.show({target:'window1', isModal:true, headerLabel:'window #1'})" class="btn-dark">modal</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', isModal:false, headerLabel:'window #1'})">modalless</button>
+                           </td>
+                            <td>Whether the window is modal.</td>
+                        </tr>
+                        <tr>
+                            <td>isDrag</td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>
+                                <button type="button" onclick="BitWindow.show({target:'window1', isDrag:true, headerLabel:'window #1'})" class="btn-dark">draggable</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', isDrag:false, headerLabel:'window #1'})">fixed</button>
+                            </td>
+                            <td>Whether the window is draggable. If set to `false`, the window cannot be dragged.</td>
+                        </tr>
+                        <tr>
+                            <td>showHeader</td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>
+                                <button type="button" onclick="BitWindow.show({target:'window1', showHeader:true, headerLabel:'window #1'})" class="btn-dark">header</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', showHeader:false})">headerless</button>
+                            </td>
+                            <td>Whether to display the header. If set to `false`, only the specified element will be shown as the window, without the header.</td>
+                        </tr>
+                        <tr>
+                            <td>cornerRadius</td> 
+                            <td>string</td> 
+                            <td>5px</td>
+                            <td>
+                                <button type="button" onclick="BitWindow.show({target:'window1', cornerRadius:'0px', headerLabel:'window #1'})">0px</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', cornerRadius:'5px', headerLabel:'window #1'})" class="btn-dark">5px</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', cornerRadius:'10px', headerLabel:'window #1'})">10px</button>
+                            </td>
+                            <td>The corner radius value of the window.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="header-options-l" class="mt-3">Header Options(Left Side Label)</h3>
+                <p>The header area is located at the top of the window and displays the window&#39;s title as text or an icon. It also supports interaction with the user through buttons to close the window or handle specific events defined by the user. In <strong>BitWindow</strong>, the header is created automatically and is included by default. If you don&#39;t want to include the header, you can specify the <code>showHeader: false</code> option.<br>The options used in the header area are as follows:</p>
+                <table class="table responsive align-middle"> 
+                    <thead>
+                        <tr>
+                            <th>Name</th> 
+                            <th>Type</th>
+                            <th style="width: 120px;"> Default</th> 
+                            <th>Control</th>
+                            <th>Descriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>headerColor</td>
+                            <td>string</td>
+                            <td>#f1f3f4</td>
+                            <td>
+                                <button type="button" class="btn-dark"      onclick="BitWindow.show({target:'window1', headerLabel:'window #1'})">default</button>
+                                <button type="button" class="btn-success"   onclick="BitWindow.show({target:'window1', headerColor:'#04AA6D', headerLabel:'window #1', headerLabelColor:'black'})">green</button> 
+                                <button type="button" class="btn-primary"   onclick="BitWindow.show({target:'window1', headerColor:'#03a9f4', headerLabel:'window #1', headerLabelColor:'black'})">blue</button> 
+                                <button type="button" class="btn-danger"    onclick="BitWindow.show({target:'window1', headerColor:'#F44336', headerLabel:'window #1', headerLabelColor:'black'})">red</button> 
+                                
+                            </td>
+                            <td>The background color of the header area. You can apply colors in formats such as hex, rgb, etc.</td>
+                        </tr>
+                        <tr>
+                            <td>headerlcon</td>
+                            <td>string</td>
+                            <td>notes</td>
+                            <td>
+                                <button type="button" class="btn-dark"      onclick="BitWindow.show({target:'window1'})">notes</button>
+                                <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'info'})">info</button>
+                                <button type="button" class="btn-success"   onclick="BitWindow.show({target:'window1', headerIcon:'info_colored'})">info_colored</button>
+                                <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'success'})">success</button> 
+                                <button type="button" class="btn-primary"   onclick="BitWindow.show({target:'window1', headerIcon:'success_colored'})">success_colored</button> 
+                                <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'warning'})">warning</button> 
+                                <button type="button" class="btn-warning"   onclick="BitWindow.show({target:'window1', headerIcon:'warning_colored'})">warning_colored</button> 
+                                <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'danger'})">danger</button> 
+                                <button type="button" class="btn-danger"    onclick="BitWindow.show({target:'window1', headerIcon:'danger_colored'})">danger_colored</button> 
+                                <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'arrow_down'})">arrow_down</button> 
+                                <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'question'})">question</button> 
+                                <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'setting'})">setting</button> 
+                                <button type="button"                       onclick="BitWindow.show({target:'window1', headerIcon:'menu'})">menu</button> 
+                            </td>
+                            <td>The built-in icon displayed on the left side of the header. <br> 
+                                There are 10 built-in icons: arrow_down, close, danger, info, menu, notes, question, setting, success, and warning.<br>
+                                For the four icons — info, success, warn, and danger — you can append _colored (e.g., `info_colored`) to insert predefined colored versions of the icons.</td>
+                        </tr>
+                        <tr>
+                            <td>headerLabel</td>
+                            <td>string</td> 
+                            <td>null</td>
+                            <td>
+                                <button type="button" class="btn-dark" onclick="BitWindow.show({target:'window1'})">no label</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', headerLabel:'window #1'})">with label</button>
+                            </td>
+                            <td>The text displayed on the left side of the header.</td>
+                        </tr>
+                        <tr>
+                            <td>headerLabelColor</td>
+                            <td>string</td>
+                            <td>#5f6368</td>
+                            <td>
+                                <button type="button" class="btn-dark"      onclick="BitWindow.show({target:'window1', headerLabel:'window #1'})">default</button>
+                                <button type="button" class="btn-success"   onclick="BitWindow.show({target:'window1', headerLabel:'window #1', headerLabelColor:'#04AA6D'})">green</button>
+                                <button type="button" class="btn-primary"   onclick="BitWindow.show({target:'window1', headerLabel:'window #1', headerLabelColor:'#03a9f4'})">blue</button>
+                                <button type="button" class="btn-warning"   onclick="BitWindow.show({target:'window1', headerLabel:'window #1', headerLabelColor:'#ff9800'})">yellow</button>
+                                <button type="button" class="btn-danger"    onclick="BitWindow.show({target:'window1', headerLabel:'window #1', headerLabelColor:'#F44336'})">red</button>
+                            </td>
+                            <td>The color of the header label. You can apply colors in formats such as hex, rgb, etc.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="header-options-r" class="mt-3">Header Option(Right Side Actions)</h3>
+                <p>The action icon is located on the right side of the header and responds to <code>BitWindow.close()</code> or a user-defined function. <strong>BitWindow</strong> does not limit the number of actions. If there is only one action, you can define it as shown in the example below, where the icon to be displayed and the function to be executed when clicked are specified inside the <code>{}</code>. The icon is the same as the one defined in the previous section under the <code>headerIcon</code> option.</p>
+                <pre><code>
+                    <span class="code-class">BitWindow</span>.show({<span class="code-attr">target</span>:<span class="code-str">'window1'</span>, <span class="code-attr">actions</span>:{<span class="code-attr">icon</span>: <span class="code-str">'close'</span>, <span class="code-attr">function</span>:<span class="code-str">()=&gt;BitWindow.close()</span>}})
+                </code></pre>
+                <p>If you want to use more than one action, place all the actions inside <code>[]</code> and separate each action with a <code>,</code>.</p>
+                <pre><code>
+                    <span class="code-class">BitWindow</span>.show({<span class="code-attr">target</span>:<span class="code-str">'window1'</span>, actions:[{<span class="code-attr">icon</span>:<span class="code-str">'setting'</span>, <span class="code-attr">function</span>:<span class="code-str">()=&gt;alert('Do Action!!')</span>},
+                                                               {<span class="code-attr">icon</span>: <span class="code-str">'close'</span>, <span class="code-attr">function</span>:<span class="code-str">()=&gt;BitWindow.close()</span>}]})
+                </code></pre>
+                <table class="table responsive align-middle"> 
+                    <thead>
+                        <tr>
+                            <th>Name</th> 
+                            <th>Type</th>
+                            <th style="width: 120px;"> Default</th> 
+                            <th>Control</th>
+                            <th>Descriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>actions</td>
+                            <td>object</td>
+                            <td>close</td>
+                            <td>
+                                <button type="button" class="btn-dark" onclick="BitWindow.show({target:'window1'})">close icon</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', actions:{icon:'arrow_down', function:()=>BitWindow.close()}})">arrow_down icon</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', actions:{icon:'setting', function:()=>alert('Do Action!!')}})">setting icon</button>
+                                <button type="button" onclick="BitWindow.show({target:'window1', actions:[{icon:'setting', function:()=>alert('Do Action!!')},{icon:'close',function:()=>BitWindow.close()}]})">icon + icon</button>
+                            </td>
+                            <td>There are 10 built-in icons: arrow_down, close, danger, info, menu, notes, question, setting, success, and warning. For the four icons — info, success, warn, and danger — you can append _colored (e.g., `info_colored`) to insert predefined colored versions of the icons.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="event" class="mt-4">Event</h2>
+                <p>Using the <code>BitWindow.close()</code> event, you can close the window that is displayed on the screen.</p>
+                <pre><code>
+                    <span class="code-class">BitWindow</span>.show({<span class="code-attr">target</span>:<span class="code-str">'window1'</span>, <span class="code-attr">actions</span>:{<span class="code-attr">icon</span>: <span class="code-str">'close'</span>, <span class="code-attr">function</span>:<span class="code-str">()=&gt;BitWindow.close()</span>}})
+                </code></pre>
+                <table class="table responsive align-middle"> 
+                    <thead>
+                        <tr>
+                            <th>Name</th> 
+                            <th>Type</th>
+                            <th style="width: 120px;"> Default</th> 
+                            <th>Control</th>
+                            <th>Descriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BitWindow.close()</td>
+                            <td>function</td>
+                            <td>-</td>
+                            <td>
+                                <button type="button" onclick="BitWindow.show({target:'window3', actions:null})">example</button>
+                            </td>
+                            <td>Close the window that is displayed on the screen</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </article>
+        </div>
+
+        <div id="window1" class="bw-window" style="width: 350px; padding: 10px;">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. placeat, earum cumque, nostrum quibusdam autem, impedit incidunt velit voluptate tenetur iste ea? Vel est, delectus facere laboriosam vero placeat dolor natus voluptate corporis officiis dolorem repellendus provident eius aperiam error porro reiciendis illo tempora, non excepturi expedita vitae omnis ipsam.</p>
+        </div>
+
+        <div id="window2" class="bw-window" style="width: 350px; padding: 10px;">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div id="window3" class="bw-window" style="width: 350px; padding: 10px;">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. placeat, earum cumque, nostrum quibusdam autem, impedit incidunt velit voluptate tenetur iste ea? Vel est, delectus facere laboriosam vero placeat dolor natus voluptate corporis officiis dolorem repellendus provident eius aperiam error porro reiciendis illo tempora, non excepturi expedita vitae omnis ipsam.</p>
+            <div class="mb-3">
+                <button type="button" class="btn-danger" onclick="BitWindow.close()">Close</button>
+            </div>
+        </div>
+        
+        <footer class=" d-flex justify-content-center" style="margin-top: 100px; margin-bottom: 30px;">
+            <a href="https://github.com/bit2stack/bit-snackbar" target='_blank' class="align-middle mx-3 mt-1">
+                <img src="img/github-logo.png" alt="github logo" width="35" >
+            </a>
+            <a href="https://github.com/bit2stack/bit-snackbar/archive/refs/heads/main.zip" target='_blank' class="mx-3">
+                <img src="img/download.png" alt="github logo" width="40" >
+            </a>
+            <a href="mailto:dev.smtraders@gmail.com" class="mx-3">
+                <img src="img/mail.png" alt="dev.smtraders@gmail.com" width="40" >
+            </a>
+        </footer>
+
+        <script src="../dist/bit-window.min.js" charset="utf-8"></script>
+        <script>
+            var btn = document.getElementsByTagName('button');
+            for(var i=0; i<btn.length; i++)
+                {
+                var bcolor = btn[i].className!=''?btn[i].className:'btn-secondary';
+                btn[i].className = 'btn btn-sm '+bcolor;
+            }
+        </script>
+    </body>
+</html>

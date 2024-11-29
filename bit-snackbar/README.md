@@ -4,7 +4,7 @@
 The **BitSnackbar** is a message component developed using pure JavaScript and CSS, designed to provide more suitable notification functionality for users by adding various options based on the traditional snackbar format.
 
 <p align="center">
-    <img src='http://www.bit-stack.com/demo/img/feature.png' alt='bit-snackbar feature image' style='width: 350px;'>
+    <img src='./demo/img/feature.png' alt='bit-snackbar feature image' style='width: 350px;'>
 </p>
 
 1. Header Area : Convey messages to users through text, icons, and background colors.
@@ -14,8 +14,8 @@ The **BitSnackbar** is a message component developed using pure JavaScript and C
 
 ## Document and Demo
 For more information about the **BitSnackbar**, please refer to the demo site below. You can quickly see the functionality of the snackbar through the control panel page without complex explanations.
-- [www.bit-stack.com](http://www.bit-stack.com/)
-- [www.bit-stack.com/demo/control-panel](http://www.bit-stack.com/demo/control-panel.html)
+- [www.bit-stack.com/bit-snackbar/demo/document.html](http://www.bit-stack.com/bit-snackbar/demo/document.html)
+- [www.bit-stack.com/bit-snackbar/demo/control-panel.html](http://www.bit-stack.com/bit-snackbar/demo/control-panel.html)
 
 ## Install
 1. Download the project.

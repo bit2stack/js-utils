@@ -3,22 +3,30 @@
 ## Introduction
 BitWindow is a component developed using pure JavaScript and CSS to create draggable pop-up windows in both web and mobile environments. It supports various configuration options, enabling developers to easily and quickly create JavaScript windows.
 
+<p align="center">
+    <img src='./demo/img/feature.png' alt='bit-window feature image' style='width: 400px;'>
+</p>
+
+1. Header Area : Header Area : Specify the header icon, title, and actions to close the window or perform additional tasks with icons.
+2. Contents Area : Window Contests
+
 ## Demo
-For more information about **BitWindow**, please refer to the demo site below. You can easily explore the window's features without complex explanations through the control panel page.
-- [www.bit-stack.com](http://www.bit-stack.com/)
+For more information about the **BitWindow**, please refer to the demo site below. You can quickly see the functionality of the snackbar through the control panel page without complex explanations.
+- [www.bit-stack.com/bit-window/demo/document.html](http://www.bit-stack.com/bit-window/demo/document.html)
+- [www.bit-stack.com/bit-window/demo/control-panel.html](http://www.bit-stack.com/bit-window/demo/control-panel.html)
 
 ## Install
 1. Download the project.
 2. Copy the `bit-window.min.css` and `bit-window.min.js` files from the `dist` folder to your desired location.
 3. Place the CSS and JS files in the appropriate sections of the `<head>` and `<body>` of your HTML.
 ```html
-<link rel="stylesheet" type="text/css" href="dist/snackbar.min.css" />
-<script type="text/javascript" src="dist/snackbar.min.js"></script>
+<link rel="stylesheet" type="text/css" href="dist/bit-window.min.css" />
+<script type="text/javascript" src="dist/bit-window.min.js"></script>
 ```
 4. Implement the internal functionality of the window and assign the desired `id` to the respective area.
 5. To hide the window when the page loads, add the `bw-window` class to the element.
 ```html
-<div id="winContents" class="bw-window">
+<div id="window1" class="bw-window">
     ...
 </div>
 ```
@@ -27,7 +35,7 @@ For more information about **BitWindow**, please refer to the demo site below. Y
 **BitWindow** automatically adds the window's header section through option settings. Using global options and header options, users can configure the window's functionality as desired.
 Before diving into the specific options for each section, you can quickly and easily implement a pop-up window in typical scenarios using the predefined features of **BitWindow**, as shown in the example below.
 ```js
-BitWindow.show({target:'winContents'});
+BitWindow.show({target:'window1'});
 ```
 By using the `BitWindow.show` feature, a window is created with an automatically added header that includes a `notes` icon and a `close` icon. When the `close` icon is clicked or when the user clicks outside the window, the window will automatically disappear.
 
@@ -38,7 +46,7 @@ By using the `BitWindow.show` feature, a window is created with an automatically
 Options are set by connecting the option name and option value with a `:` inside `{}` (e.g., `{option-name: option-value}`). Multiple options can be used consecutively by separating them with a `,`. The configured options can then be applied by passing them as arguments to the `BitWindow.show()` function.  
 The `target` option is required and must be specified.
 ```js
-BitWindow.show({target:'winContents', isModal:false, headerLabel:'Information'})
+BitWindow.show({target:'window1', isModal:false, headerLabel:'Information'})
 ```
 ### Global Options
 The global options determine the basic behavior of **BitWindow**. With the global options, you can set the window's position, enable or disable dragging, and hide the header section.
@@ -70,12 +78,12 @@ The options used in the header area are as follows:
 The action icon is located on the right side of the header and responds to `BitWindow.close()` or a user-defined function. **BitWindow** does not limit the number of actions.  
 If there is only one action, you can define it as shown in the example below, where the icon to be displayed and the function to be executed when clicked are specified inside the `{}`. The icon is the same as the one defined in the previous section under the `headerIcon` option.
 ```js
-BitWindow.show({target:'winContents', actions:{icon: 'close', function:()=>BitWindow.close()}})
+BitWindow.show({target:'window1', actions:{icon: 'close', function:()=>BitWindow.close()}})
 ```
 If you want to use more than one action, place all the actions inside `[]` and separate each action with a `,`.
 
 ```js
-BitWindow.show({target:'winContents', actions:[{icon:'setting', function:()=>alert('setting action fired')},{icon: 'close', function:()=>BitWindow.close()}]})
+BitWindow.show({target:'window1', actions:[{icon:'setting', function:()=>alert('setting action fired')},{icon: 'close', function:()=>BitWindow.close()}]})
 ```
 The components that make up the action are as follows. Note that color and size do not apply to the icon.
 
@@ -88,4 +96,4 @@ The components that make up the action are as follows. Note that color and size 
 ## Event
 Using the `BitWindow.close()` event, you can close the window that is displayed on the screen.
 ```js
-BitWindow.show({target:'winContents', actions:{icon: 'close', function:()=>BitWindow.close()}})
+BitWindow.show({target:'window1', actions:{icon: 'close', function:()=>BitWindow.close()}})
