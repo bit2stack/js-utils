@@ -9,13 +9,13 @@
     background-color: #FFF;
     border: solid 1px #cecece;
     box-shadow: 1px 1px 16px 4px rgba(65, 65, 65, 0.1), 0 0 32px rgba(65, 65, 65, 0.1);
-    z-index: 2;
+    z-index: 11100;
 }
 .bw-modal-background
 {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 11000;
     left: 0;
     top: 0;
     width: 100%;
